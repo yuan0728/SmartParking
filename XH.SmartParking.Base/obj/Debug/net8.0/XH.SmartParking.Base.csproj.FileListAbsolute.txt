@@ -1,0 +1,11 @@
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Base\bin\Debug\net8.0\XH.SmartParking.Base.deps.json
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Base\bin\Debug\net8.0\XH.SmartParking.Base.dll
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Base\bin\Debug\net8.0\XH.SmartParking.Base.pdb
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Base\obj\Debug\net8.0\XH.SmartParking.Base.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Base\obj\Debug\net8.0\XH.SmartParking.Base.AssemblyInfoInputs.cache
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Base\obj\Debug\net8.0\XH.SmartParking.Base.AssemblyInfo.cs
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Base\obj\Debug\net8.0\XH.SmartParking.Base.csproj.CoreCompileInputs.cache
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Base\obj\Debug\net8.0\XH.SmartParking.Base.dll
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Base\obj\Debug\net8.0\refint\XH.SmartParking.Base.dll
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Base\obj\Debug\net8.0\XH.SmartParking.Base.pdb
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Base\obj\Debug\net8.0\ref\XH.SmartParking.Base.dll

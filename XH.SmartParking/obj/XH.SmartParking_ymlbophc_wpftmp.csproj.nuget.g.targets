@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)prism.events\9.0.537\buildTransitive\Prism.Events.targets" Condition="Exists('$(NuGetPackageRoot)prism.events\9.0.537\buildTransitive\Prism.Events.targets')" />
+    <Import Project="$(NuGetPackageRoot)prism.container.abstractions\9.0.106\buildTransitive\Prism.Container.Abstractions.targets" Condition="Exists('$(NuGetPackageRoot)prism.container.abstractions\9.0.106\buildTransitive\Prism.Container.Abstractions.targets')" />
+    <Import Project="$(NuGetPackageRoot)prism.core\9.0.537\buildTransitive\Prism.Core.targets" Condition="Exists('$(NuGetPackageRoot)prism.core\9.0.537\buildTransitive\Prism.Core.targets')" />
+    <Import Project="$(NuGetPackageRoot)prism.container.unity\9.0.106\buildTransitive\Prism.Container.Unity.targets" Condition="Exists('$(NuGetPackageRoot)prism.container.unity\9.0.106\buildTransitive\Prism.Container.Unity.targets')" />
+    <Import Project="$(NuGetPackageRoot)prism.unity\9.0.537\buildTransitive\Prism.Unity.targets" Condition="Exists('$(NuGetPackageRoot)prism.unity\9.0.537\buildTransitive\Prism.Unity.targets')" />
+  </ImportGroup>
+</Project>

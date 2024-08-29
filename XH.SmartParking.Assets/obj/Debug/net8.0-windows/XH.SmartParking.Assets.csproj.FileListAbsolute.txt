@@ -1,0 +1,12 @@
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Assets\bin\Debug\net8.0-windows\XH.SmartParking.Assets.deps.json
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Assets\bin\Debug\net8.0-windows\XH.SmartParking.Assets.dll
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Assets\bin\Debug\net8.0-windows\XH.SmartParking.Assets.pdb
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Assets\obj\Debug\net8.0-windows\XH.SmartParking.Assets.g.resources
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Assets\obj\Debug\net8.0-windows\XH.SmartParking.Assets.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Assets\obj\Debug\net8.0-windows\XH.SmartParking.Assets.AssemblyInfoInputs.cache
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Assets\obj\Debug\net8.0-windows\XH.SmartParking.Assets.AssemblyInfo.cs
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Assets\obj\Debug\net8.0-windows\XH.SmartParking.Assets.csproj.CoreCompileInputs.cache
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Assets\obj\Debug\net8.0-windows\XH.SmartParking.Assets.dll
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Assets\obj\Debug\net8.0-windows\refint\XH.SmartParking.Assets.dll
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Assets\obj\Debug\net8.0-windows\XH.SmartParking.Assets.pdb
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Assets\obj\Debug\net8.0-windows\ref\XH.SmartParking.Assets.dll

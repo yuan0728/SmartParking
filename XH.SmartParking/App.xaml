@@ -1,0 +1,9 @@
+﻿<p:PrismApplication x:Class="XH.SmartParking.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:XH.SmartParking"
+             xmlns:p="http://prismlibrary.com/">
+    <Application.Resources>
+         
+    </Application.Resources>
+</p:PrismApplication>

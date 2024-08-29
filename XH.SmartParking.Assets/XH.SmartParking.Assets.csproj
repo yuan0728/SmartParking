@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\Avatar\002m.jpg" />
+    <None Remove="Images\bbb.png" />
+    <None Remove="Images\camera.png" />
+    <None Remove="Images\covers\1.png" />
+    <None Remove="Images\covers\2.png" />
+    <None Remove="Images\covers\3.png" />
+    <None Remove="Images\covers\huA.jpg" />
+    <None Remove="Images\covers\SUA-01.jpg" />
+    <None Remove="Images\covers\wanF.jpg" />
+    <None Remove="Images\covers\yiB.jpg" />
+    <None Remove="Images\covers\yueA.jpg" />
+    <None Remove="Images\login_back.jpg" />
+    <None Remove="Images\Logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Styles\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Avatar\002m.jpg" />
+    <Resource Include="Images\bbb.png" />
+    <Resource Include="Images\camera.png" />
+    <Resource Include="Images\covers\1.png" />
+    <Resource Include="Images\covers\2.png" />
+    <Resource Include="Images\covers\3.png" />
+    <Resource Include="Images\covers\huA.jpg" />
+    <Resource Include="Images\covers\SUA-01.jpg" />
+    <Resource Include="Images\covers\wanF.jpg" />
+    <Resource Include="Images\covers\yiB.jpg" />
+    <Resource Include="Images\covers\yueA.jpg" />
+    <Resource Include="Images\login_back.jpg" />
+    <Resource Include="Images\Logo.png" />
+  </ItemGroup>
+
+</Project>
