@@ -1,0 +1,16 @@
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Controls\bin\Debug\net8.0-windows\XH.SmartParking.Controls.deps.json
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Controls\bin\Debug\net8.0-windows\XH.SmartParking.Controls.dll
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Controls\bin\Debug\net8.0-windows\XH.SmartParking.Controls.pdb
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Controls\obj\Debug\net8.0-windows\Loading.baml
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Controls\obj\Debug\net8.0-windows\Loading.g.cs
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Controls\obj\Debug\net8.0-windows\XH.SmartParking.Controls_MarkupCompile.cache
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Controls\obj\Debug\net8.0-windows\XH.SmartParking.Controls.g.resources
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Controls\obj\Debug\net8.0-windows\XH.SmartParking.Controls.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Controls\obj\Debug\net8.0-windows\XH.SmartParking.Controls.AssemblyInfoInputs.cache
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Controls\obj\Debug\net8.0-windows\XH.SmartParking.Controls.AssemblyInfo.cs
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Controls\obj\Debug\net8.0-windows\XH.SmartParking.Controls.csproj.CoreCompileInputs.cache
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Controls\obj\Debug\net8.0-windows\XH.SmartParking.Controls.sourcelink.json
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Controls\obj\Debug\net8.0-windows\XH.SmartParking.Controls.dll
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Controls\obj\Debug\net8.0-windows\refint\XH.SmartParking.Controls.dll
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Controls\obj\Debug\net8.0-windows\XH.SmartParking.Controls.pdb
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Controls\obj\Debug\net8.0-windows\ref\XH.SmartParking.Controls.dll
