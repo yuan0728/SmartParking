@@ -22,6 +22,6 @@ namespace XH.SmartParking.ORM
                 optionsBuilder.UseSqlServer("Data Source=LITTLESEAPAD;Initial Catalog=XHSmartParking;Persist Security Info=True;User ID=sa;Password=abc123;Trust Server Certificate=True");
         }
 
-        public virtual DbSet<SysUser> SysUsers { get; set; }
+        public virtual DbSet<SysUser> SysUser { get; set; }
     }
 }

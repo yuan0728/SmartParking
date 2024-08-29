@@ -4,14 +4,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:XH.SmartParking.Views"
-             xmlns:p="http://prismlibrary.com/" Background="Transparent"
+             xmlns:p="http://prismlibrary.com/" 
+             xmlns:c="clr-namespace:Zhaoxi.SmartParking.Controls;assembly=XH.SmartParking.Controls"
+             Background="Transparent"
              xmlns:b="clr-namespace:XH.SmartParking.Base"
-             mc:Ignorable="d" Height="300" Width="480"
-             d:DesignHeight="450" d:DesignWidth="800">
+             mc:Ignorable="d" Height="300" Width="480">
 
     <UserControl.Resources>
         <!--用户名样式-->
         <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="14" />
             <Setter Property="Height" Value="33" />
             <Setter Property="VerticalContentAlignment" Value="Center" />
             <Setter Property="Template">
@@ -46,6 +48,7 @@
 
         <!--密码输入框样式-->
         <Style TargetType="PasswordBox">
+            <Setter Property="FontSize" Value="14" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="PasswordBox">
@@ -67,7 +70,7 @@
                             <Trigger Property="IsKeyboardFocused" Value="True">
                                 <Setter Property="BorderBrush" Value="#0b3d90" TargetName="border" />
                             </Trigger>
-                            <DataTrigger Binding="{Binding Path=Password,RelativeSource={RelativeSource Mode=Self}}" Value="">
+                            <DataTrigger Binding="{Binding Path=Password}" Value="">
                                 <Setter TargetName="markText" Property="Visibility" Value="Visible" />
                             </DataTrigger>
                         </ControlTemplate.Triggers>
@@ -111,45 +114,64 @@
             </Setter>
         </Style>
 
+        <!--转换-->
+        <BooleanToVisibilityConverter x:Key="b2v" />
+
     </UserControl.Resources>
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.Effect>
+                <BlurEffect Radius="{Binding BlurValue}" />
+            </Grid.Effect>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
 
-        <Image Source="/XH.SmartParking.Assets;component/Images/login_back.jpg" />
-        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 60 0 0">
-            <TextBlock Text="欢迎使用" Foreground="#AAFFFFFF" Margin="0 10"/>
-            <TextBlock Text="小海智慧停车场系统" Foreground="White" FontSize="15"/>
-        </StackPanel>
-        <TextBlock Text="2024 © XIAOHAISYUDY" Foreground="#88FFFFFF" 
+            <Image Source="/XH.SmartParking.Assets;component/Images/login_back.jpg" Stretch="Fill"/>
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 60 0 0">
+                <TextBlock Text="欢迎使用" Foreground="#AAFFFFFF" Margin="0 10"/>
+                <TextBlock Text="小海智慧停车场系统" Foreground="White" FontSize="15" Margin="0 10"/>
+                <TextBlock Text="v3.0" Foreground="#5fff"/>
+            </StackPanel>
+            <TextBlock Text="2024 © XIAOHAISYUDY" Foreground="#88FFFFFF" 
                    VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="8" Margin="0 5"/>
 
-        <Grid Grid.Column="1" VerticalAlignment="Center" Margin="30 0 30 20">
-            <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-            </Grid.RowDefinitions>
+            <Grid Grid.Column="1" VerticalAlignment="Center" Margin="30 0 30 20">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
 
-            <TextBlock Text="用户登录" Foreground="#0b3d90" FontSize="13" Margin="0 10" FontWeight="Normal" />
-            <TextBlock Text="用户名" Grid.Row="1" Foreground="#cc0b3d90" Margin="0 10 0 5" FontWeight="Normal" />
-            <TextBox Grid.Row="2" Text="{Binding UserName}" />
-            <TextBlock Text="密码" Grid.Row="3" Foreground="#cc0b3d90" Margin="0 10 0 5" FontWeight="Normal" />
-            <PasswordBox Grid.Row="4" b:PasswordEx.Password="{Binding Password,Mode=TwoWay}"/>
-            <Button Content="登  录" Grid.Row="5" Command="{Binding LoginCommand}"/>
-            <CheckBox Content="记住密码" Foreground="#bbb" VerticalAlignment="Center" HorizontalAlignment="Left" 
-                      VerticalContentAlignment="Center" FontSize="11" Grid.Row="6"  IsChecked="{Binding IsRecord}"/>
-            <TextBlock Grid.Row="6" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <TextBlock Text="用户登录" Foreground="#0b3d90" FontSize="13" Margin="0 10" FontWeight="Normal" />
+                <TextBlock Text="用户名" Grid.Row="1" Foreground="#cc0b3d90" Margin="0 10 0 5" FontWeight="Normal" />
+                <TextBox Grid.Row="2" Text="{Binding UserName}" />
+                <TextBlock Text="密码" Grid.Row="3" Foreground="#cc0b3d90" Margin="0 10 0 5" FontWeight="Normal" />
+                <PasswordBox Grid.Row="4" b:PasswordEx.Password="{Binding Password,Mode=TwoWay}"/>
+                <CheckBox Content="记住密码" Foreground="#bbb" VerticalAlignment="Center" HorizontalAlignment="Left" 
+                          VerticalContentAlignment="Center" FontSize="11" Grid.Row="5"  IsChecked="{Binding IsRecord}" Margin="0 5"/>
+                <Button Content="登  录" Grid.Row="6" Command="{Binding LoginCommand}" Foreground="White" Height="28" Margin="0 10 0 5"/>
+                <TextBlock Text="{Binding ErrorInfo}" Foreground="Red" Grid.Row="7" TextAlignment="Center" 
+                           TextWrapping="Wrap"/>
+
+                <!--<TextBlock Grid.Row="6" HorizontalAlignment="Right" VerticalAlignment="Center">
                 <Hyperlink>找回密码</Hyperlink>
-            </TextBlock>
+            </TextBlock>-->
 
+            </Grid>
         </Grid>
+
+        <!--加载的时候 后面不可以点击-->
+        <Border Background="Transparent" Visibility="{Binding IsShowLoading,Converter={StaticResource b2v}}"/>
+        <c:Loading Grid.ColumnSpan="2" Width="80" Height="80" 
+                   Visibility="{Binding IsShowLoading,Converter={StaticResource b2v}}"/>
     </Grid>
+
 </UserControl>

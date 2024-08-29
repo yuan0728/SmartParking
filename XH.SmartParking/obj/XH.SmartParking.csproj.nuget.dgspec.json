@@ -135,6 +135,73 @@
         }
       }
     },
+    "D:\\Users\\yhl18\\Desktop\\WPF学习\\SmartParking\\XH.SmartParking.Controls\\XH.SmartParking.Controls.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Users\\yhl18\\Desktop\\WPF学习\\SmartParking\\XH.SmartParking.Controls\\XH.SmartParking.Controls.csproj",
+        "projectName": "XH.SmartParking.Controls",
+        "projectPath": "D:\\Users\\yhl18\\Desktop\\WPF学习\\SmartParking\\XH.SmartParking.Controls\\XH.SmartParking.Controls.csproj",
+        "packagesPath": "C:\\Users\\yhl18\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\yhl18\\Desktop\\WPF学习\\SmartParking\\XH.SmartParking.Controls\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\yhl18\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "D:\\Users\\yhl18\\Desktop\\WPF学习\\SmartParking\\XH.SmartParking.Entities\\XH.SmartParking.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -229,6 +296,9 @@
             "projectReferences": {
               "D:\\Users\\yhl18\\Desktop\\WPF学习\\SmartParking\\XH.SmartParking.Base\\XH.SmartParking.Base.csproj": {
                 "projectPath": "D:\\Users\\yhl18\\Desktop\\WPF学习\\SmartParking\\XH.SmartParking.Base\\XH.SmartParking.Base.csproj"
+              },
+              "D:\\Users\\yhl18\\Desktop\\WPF学习\\SmartParking\\XH.SmartParking.Entities\\XH.SmartParking.Entities.csproj": {
+                "projectPath": "D:\\Users\\yhl18\\Desktop\\WPF学习\\SmartParking\\XH.SmartParking.Entities\\XH.SmartParking.Entities.csproj"
               }
             }
           }
@@ -457,6 +527,9 @@
             "projectReferences": {
               "D:\\Users\\yhl18\\Desktop\\WPF学习\\SmartParking\\XH.SmartParking.Assets\\XH.SmartParking.Assets.csproj": {
                 "projectPath": "D:\\Users\\yhl18\\Desktop\\WPF学习\\SmartParking\\XH.SmartParking.Assets\\XH.SmartParking.Assets.csproj"
+              },
+              "D:\\Users\\yhl18\\Desktop\\WPF学习\\SmartParking\\XH.SmartParking.Controls\\XH.SmartParking.Controls.csproj": {
+                "projectPath": "D:\\Users\\yhl18\\Desktop\\WPF学习\\SmartParking\\XH.SmartParking.Controls\\XH.SmartParking.Controls.csproj"
               },
               "D:\\Users\\yhl18\\Desktop\\WPF学习\\SmartParking\\XH.SmartParking.Entities\\XH.SmartParking.Entities.csproj": {
                 "projectPath": "D:\\Users\\yhl18\\Desktop\\WPF学习\\SmartParking\\XH.SmartParking.Entities\\XH.SmartParking.Entities.csproj"

@@ -3,13 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:XH.SmartParking.Base"
-        mc:Ignorable="d" SizeToContent="WidthAndHeight" WindowStyle="None"
-        WindowStartupLocation="CenterScreen" Height="300" Width="480"
+        xmlns:local="clr-namespace:XH.SmartParking.Base" Background="Transparent"
+        Icon="/XH.SmartParking.Assets;component/Images/Icon.ico"
+        Width="{Binding Content.Width,RelativeSource={RelativeSource Mode=Self}}"
+        Height="{Binding Content.Height,RelativeSource={RelativeSource Mode=Self}}"
+        WindowStartupLocation="CenterScreen" 
+        mc:Ignorable="d" 
+        ResizeMode="NoResize"
         Title="DialogWindowEX">
-    <!--<WindowChrome.WindowChrome>
-        <WindowChrome NonClientFrameEdges="None"
-                      GlassFrameThickness="0"
-                      UseAeroCaptionButtons="False"/>
-    </WindowChrome.WindowChrome>-->
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="-1" NonClientFrameEdges="None"/>
+    </WindowChrome.WindowChrome>
 </Window>

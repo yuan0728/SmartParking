@@ -746,6 +746,16 @@
         "runtime": {
           "bin/placeholder/XH.SmartParking.Base.dll": {}
         }
+      },
+      "XH.SmartParking.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/XH.SmartParking.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/XH.SmartParking.Entities.dll": {}
+        }
       }
     }
   },
@@ -2093,12 +2103,18 @@
       "type": "project",
       "path": "../XH.SmartParking.Base/XH.SmartParking.Base.csproj",
       "msbuildProject": "../XH.SmartParking.Base/XH.SmartParking.Base.csproj"
+    },
+    "XH.SmartParking.Entities/1.0.0": {
+      "type": "project",
+      "path": "../XH.SmartParking.Entities/XH.SmartParking.Entities.csproj",
+      "msbuildProject": "../XH.SmartParking.Entities/XH.SmartParking.Entities.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "Microsoft.Data.SqlClient >= 5.1.5",
-      "XH.SmartParking.Base >= 1.0.0"
+      "XH.SmartParking.Base >= 1.0.0",
+      "XH.SmartParking.Entities >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2135,6 +2151,9 @@
           "projectReferences": {
             "D:\\Users\\yhl18\\Desktop\\WPF学习\\SmartParking\\XH.SmartParking.Base\\XH.SmartParking.Base.csproj": {
               "projectPath": "D:\\Users\\yhl18\\Desktop\\WPF学习\\SmartParking\\XH.SmartParking.Base\\XH.SmartParking.Base.csproj"
+            },
+            "D:\\Users\\yhl18\\Desktop\\WPF学习\\SmartParking\\XH.SmartParking.Entities\\XH.SmartParking.Entities.csproj": {
+              "projectPath": "D:\\Users\\yhl18\\Desktop\\WPF学习\\SmartParking\\XH.SmartParking.Entities\\XH.SmartParking.Entities.csproj"
             }
           }
         }

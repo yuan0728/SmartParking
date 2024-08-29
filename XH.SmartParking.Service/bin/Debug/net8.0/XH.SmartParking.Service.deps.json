@@ -540,7 +540,8 @@
       "XH.SmartParking.IService/1.0.0": {
         "dependencies": {
           "Microsoft.Data.SqlClient": "5.1.5",
-          "XH.SmartParking.Base": "1.0.0"
+          "XH.SmartParking.Base": "1.0.0",
+          "XH.SmartParking.Entities": "1.0.0"
         },
         "runtime": {
           "XH.SmartParking.IService.dll": {}

@@ -13,3 +13,6 @@ D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.IService\bin\Debug
 D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.IService\bin\Debug\net8.0\XH.SmartParking.Base.pdb
 D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.IService\obj\Debug\net8.0\XH.SmartParking.IService.csproj.AssemblyReference.cache
 D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.IService\obj\Debug\net8.0\XH.Smart.3D2FA670.Up2Date
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.IService\obj\Debug\net8.0\XH.SmartParking.IService.sourcelink.json
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.IService\bin\Debug\net8.0\XH.SmartParking.Entities.dll
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.IService\bin\Debug\net8.0\XH.SmartParking.Entities.pdb

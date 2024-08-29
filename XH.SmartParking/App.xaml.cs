@@ -25,10 +25,10 @@ namespace XH.SmartParking
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            // 注册弹窗
-            containerRegistry.RegisterDialog<LoginView>();
             // 注册弹窗父类
             containerRegistry.RegisterDialogWindow<DialogWindowEX>();
+            // 注册弹窗
+            containerRegistry.RegisterDialog<LoginView>();
 
             // 注册相关的服务
             containerRegistry.Register<DbContext, XHDbContext>();

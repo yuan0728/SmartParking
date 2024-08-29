@@ -4,9 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:XH.SmartParking.Views"
-        WindowStartupLocation="CenterScreen"
-        mc:Ignorable="d"
-        Title="MainView" Height="450" Width="800">
+        Icon="/XH.SmartParking.Assets;component/Images/Icon.ico"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" FontFamily="Microsoft YaHei"
+        FontSize="13" Foreground="#333" FontWeight="ExtraLight"
+        Title="小海智慧停车场管理系统" Height="750" Width="1300">
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="-1" 
+                      NonClientFrameEdges="None"/>
+    </WindowChrome.WindowChrome>
     <Grid>
         
     </Grid>

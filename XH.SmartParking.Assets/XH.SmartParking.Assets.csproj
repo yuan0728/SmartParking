@@ -19,6 +19,7 @@
     <None Remove="Images\covers\wanF.jpg" />
     <None Remove="Images\covers\yiB.jpg" />
     <None Remove="Images\covers\yueA.jpg" />
+    <None Remove="Images\Icon.ico" />
     <None Remove="Images\login_back.jpg" />
     <None Remove="Images\Logo.png" />
   </ItemGroup>
@@ -39,6 +40,7 @@
     <Resource Include="Images\covers\wanF.jpg" />
     <Resource Include="Images\covers\yiB.jpg" />
     <Resource Include="Images\covers\yueA.jpg" />
+    <Resource Include="Images\Icon.ico" />
     <Resource Include="Images\login_back.jpg" />
     <Resource Include="Images\Logo.png" />
   </ItemGroup>

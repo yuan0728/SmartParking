@@ -22,7 +22,7 @@ namespace XH.SmartParking.Base
 
         // Using a DependencyProperty as the backing store for Password.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty PasswordProperty =
-            DependencyProperty.RegisterAttached("Password", typeof(string), typeof(PasswordEx), new PropertyMetadata(null, new PropertyChangedCallback(OnPropertyChanged)));
+            DependencyProperty.RegisterAttached("Password", typeof(string), typeof(PasswordEx), new PropertyMetadata("******", new PropertyChangedCallback(OnPropertyChanged)));
 
 
         static bool _isUpdating = false;

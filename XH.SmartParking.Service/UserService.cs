@@ -15,9 +15,9 @@ namespace XH.SmartParking.Service
         {
         }
 
-        public void Login(string username, string password)
+        public SysUser Login(string username, string password)
         {
-            var users = this.Query<SysUser>(u => u.UserName == username && u.Password == password).ToList();
+            return this.Query<SysUser>(u => u.UserName == username && u.Password == password).ToList().FirstOrDefault();
         }
     }
 }

@@ -17,3 +17,4 @@ D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Service\obj\Debug\
 D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Service\obj\Debug\net8.0\XH.Smart.76AC289A.Up2Date
 D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Service\bin\Debug\net8.0\XH.SmartParking.Entities.dll
 D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Service\bin\Debug\net8.0\XH.SmartParking.Entities.pdb
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Service\obj\Debug\net8.0\XH.SmartParking.Service.sourcelink.json

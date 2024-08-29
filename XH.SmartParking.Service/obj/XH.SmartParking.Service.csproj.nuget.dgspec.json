@@ -162,6 +162,9 @@
             "projectReferences": {
               "D:\\Users\\yhl18\\Desktop\\WPF学习\\SmartParking\\XH.SmartParking.Base\\XH.SmartParking.Base.csproj": {
                 "projectPath": "D:\\Users\\yhl18\\Desktop\\WPF学习\\SmartParking\\XH.SmartParking.Base\\XH.SmartParking.Base.csproj"
+              },
+              "D:\\Users\\yhl18\\Desktop\\WPF学习\\SmartParking\\XH.SmartParking.Entities\\XH.SmartParking.Entities.csproj": {
+                "projectPath": "D:\\Users\\yhl18\\Desktop\\WPF学习\\SmartParking\\XH.SmartParking.Entities\\XH.SmartParking.Entities.csproj"
               }
             }
           }

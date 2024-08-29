@@ -9,3 +9,4 @@ D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Models\obj\Debug\n
 D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Models\obj\Debug\net8.0\refint\XH.SmartParking.Models.dll
 D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Models\obj\Debug\net8.0\XH.SmartParking.Models.pdb
 D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Models\obj\Debug\net8.0\ref\XH.SmartParking.Models.dll
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Models\obj\Debug\net8.0\XH.SmartParking.Models.sourcelink.json

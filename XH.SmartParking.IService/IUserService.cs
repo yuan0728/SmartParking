@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using XH.SmartParking.Entities;
 
 namespace XH.SmartParking.IService
 {
     public interface IUserService : IBaseService
     {
-        void Login(string username, string password);
+        SysUser Login(string username, string password);
     }
 }

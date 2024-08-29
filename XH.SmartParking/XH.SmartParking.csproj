@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\XH.SmartParking.Assets\XH.SmartParking.Assets.csproj" />
+    <ProjectReference Include="..\XH.SmartParking.Controls\XH.SmartParking.Controls.csproj" />
     <ProjectReference Include="..\XH.SmartParking.Entities\XH.SmartParking.Entities.csproj" />
     <ProjectReference Include="..\XH.SmartParking.IService\XH.SmartParking.IService.csproj" />
     <ProjectReference Include="..\XH.SmartParking.ORM\XH.SmartParking.ORM.csproj" />

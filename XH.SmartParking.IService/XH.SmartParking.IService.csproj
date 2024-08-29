@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\XH.SmartParking.Base\XH.SmartParking.Base.csproj" />
+    <ProjectReference Include="..\XH.SmartParking.Entities\XH.SmartParking.Entities.csproj" />
   </ItemGroup>
 
 </Project>

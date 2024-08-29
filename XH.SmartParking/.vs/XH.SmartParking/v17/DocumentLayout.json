@@ -3,11 +3,28 @@
   "WorkspaceRootPath": "D:\\Users\\yhl18\\Desktop\\WPF\u5B66\u4E60\\SmartParking\\XH.SmartParking\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E4E8F10D-162E-4E37-ADE0-D9F9F9944E0B}|XH.SmartParking.csproj|d:\\users\\yhl18\\desktop\\wpf\u5B66\u4E60\\smartparking\\xh.smartparking\\base\\dialogwindowex.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E4E8F10D-162E-4E37-ADE0-D9F9F9944E0B}|XH.SmartParking.csproj|solutionrelative:base\\dialogwindowex.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E4E8F10D-162E-4E37-ADE0-D9F9F9944E0B}|XH.SmartParking.csproj|d:\\users\\yhl18\\desktop\\wpf\u5B66\u4E60\\smartparking\\xh.smartparking\\views\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{E4E8F10D-162E-4E37-ADE0-D9F9F9944E0B}|XH.SmartParking.csproj|solutionrelative:views\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{737F8C71-0725-4046-921D-8378B1D2E71C}|..\\XH.SmartParking.ORM\\XH.SmartParking.ORM.csproj|d:\\users\\yhl18\\desktop\\wpf\u5B66\u4E60\\smartparking\\xh.smartparking.orm\\xhdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E4E8F10D-162E-4E37-ADE0-D9F9F9944E0B}|XH.SmartParking.csproj|d:\\users\\yhl18\\desktop\\wpf\u5B66\u4E60\\smartparking\\xh.smartparking\\views\\mainview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E4E8F10D-162E-4E37-ADE0-D9F9F9944E0B}|XH.SmartParking.csproj|solutionrelative:views\\mainview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4E8F10D-162E-4E37-ADE0-D9F9F9944E0B}|XH.SmartParking.csproj|d:\\users\\yhl18\\desktop\\wpf\u5B66\u4E60\\smartparking\\xh.smartparking\\xh.smartparking.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{E4E8F10D-162E-4E37-ADE0-D9F9F9944E0B}|XH.SmartParking.csproj|solutionrelative:xh.smartparking.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4E8F10D-162E-4E37-ADE0-D9F9F9944E0B}|XH.SmartParking.csproj|d:\\users\\yhl18\\desktop\\wpf\u5B66\u4E60\\smartparking\\xh.smartparking\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4E8F10D-162E-4E37-ADE0-D9F9F9944E0B}|XH.SmartParking.csproj|solutionrelative:viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4E8F10D-162E-4E37-ADE0-D9F9F9944E0B}|XH.SmartParking.csproj|d:\\users\\yhl18\\desktop\\wpf\u5B66\u4E60\\smartparking\\xh.smartparking\\base\\passwordex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4E8F10D-162E-4E37-ADE0-D9F9F9944E0B}|XH.SmartParking.csproj|solutionrelative:base\\passwordex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 81,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -37,26 +54,77 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "XHDbContext.cs",
-              "DocumentMoniker": "D:\\Users\\yhl18\\Desktop\\WPF\u5B66\u4E60\\SmartParking\\XH.SmartParking.ORM\\XHDbContext.cs",
-              "RelativeDocumentMoniker": "..\\XH.SmartParking.ORM\\XHDbContext.cs",
-              "ToolTip": "D:\\Users\\yhl18\\Desktop\\WPF\u5B66\u4E60\\SmartParking\\XH.SmartParking.ORM\\XHDbContext.cs",
-              "RelativeToolTip": "..\\XH.SmartParking.ORM\\XHDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T06:24:05.71Z"
+              "DocumentIndex": 0,
+              "Title": "DialogWindowEX.xaml",
+              "DocumentMoniker": "D:\\Users\\yhl18\\Desktop\\WPF\u5B66\u4E60\\SmartParking\\XH.SmartParking\\Base\\DialogWindowEX.xaml",
+              "RelativeDocumentMoniker": "Base\\DialogWindowEX.xaml",
+              "ToolTip": "D:\\Users\\yhl18\\Desktop\\WPF\u5B66\u4E60\\SmartParking\\XH.SmartParking\\Base\\DialogWindowEX.xaml",
+              "RelativeToolTip": "Base\\DialogWindowEX.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-08-29T17:39:42.1Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "XH.SmartParking",
+              "DocumentMoniker": "D:\\Users\\yhl18\\Desktop\\WPF\u5B66\u4E60\\SmartParking\\XH.SmartParking\\XH.SmartParking.csproj",
+              "RelativeDocumentMoniker": "XH.SmartParking.csproj",
+              "ToolTip": "D:\\Users\\yhl18\\Desktop\\WPF\u5B66\u4E60\\SmartParking\\XH.SmartParking\\XH.SmartParking.csproj",
+              "RelativeToolTip": "XH.SmartParking.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-08-29T17:33:34.804Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PasswordEx.cs",
+              "DocumentMoniker": "D:\\Users\\yhl18\\Desktop\\WPF\u5B66\u4E60\\SmartParking\\XH.SmartParking\\Base\\PasswordEx.cs",
+              "RelativeDocumentMoniker": "Base\\PasswordEx.cs",
+              "ToolTip": "D:\\Users\\yhl18\\Desktop\\WPF\u5B66\u4E60\\SmartParking\\XH.SmartParking\\Base\\PasswordEx.cs",
+              "RelativeToolTip": "Base\\PasswordEx.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAA+wBgAAAB8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T17:24:41.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "D:\\Users\\yhl18\\Desktop\\WPF\u5B66\u4E60\\SmartParking\\XH.SmartParking\\ViewModels\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\LoginViewModel.cs",
+              "ToolTip": "D:\\Users\\yhl18\\Desktop\\WPF\u5B66\u4E60\\SmartParking\\XH.SmartParking\\ViewModels\\LoginViewModel.cs",
+              "RelativeToolTip": "ViewModels\\LoginViewModel.cs",
+              "ViewState": "AQIAAHYAAAAAAAAAAAAnwH4AAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T17:12:44.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "LoginView.xaml",
               "DocumentMoniker": "D:\\Users\\yhl18\\Desktop\\WPF\u5B66\u4E60\\SmartParking\\XH.SmartParking\\Views\\LoginView.xaml",
               "RelativeDocumentMoniker": "Views\\LoginView.xaml",
               "ToolTip": "D:\\Users\\yhl18\\Desktop\\WPF\u5B66\u4E60\\SmartParking\\XH.SmartParking\\Views\\LoginView.xaml",
               "RelativeToolTip": "Views\\LoginView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-08-29T03:13:14.003Z",
+              "WhenOpened": "2024-08-29T17:12:19.658Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainView.xaml",
+              "DocumentMoniker": "D:\\Users\\yhl18\\Desktop\\WPF\u5B66\u4E60\\SmartParking\\XH.SmartParking\\Views\\MainView.xaml",
+              "RelativeDocumentMoniker": "Views\\MainView.xaml",
+              "ToolTip": "D:\\Users\\yhl18\\Desktop\\WPF\u5B66\u4E60\\SmartParking\\XH.SmartParking\\Views\\MainView.xaml",
+              "RelativeToolTip": "Views\\MainView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-08-29T17:12:02.38Z",
               "EditorCaption": ""
             }
           ]

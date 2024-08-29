@@ -23,6 +23,20 @@ namespace XH.SmartParking.Base
         public DialogWindowEX()
         {
             InitializeComponent();
+
+            //this.Loaded += DialogWindowEX_Loaded;
+            //// 窗口数据加载完之后执行
+            //this.ContentRendered += DialogWindowEX_ContentRendered;
+        }
+
+        private void DialogWindowEX_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.SizeToContent = SizeToContent.WidthAndHeight;
+        }
+
+        private void DialogWindowEX_ContentRendered(object? sender, EventArgs e)
+        {
+            this.SizeToContent = SizeToContent.WidthAndHeight;
         }
 
         public IDialogResult Result { get ; set ; }

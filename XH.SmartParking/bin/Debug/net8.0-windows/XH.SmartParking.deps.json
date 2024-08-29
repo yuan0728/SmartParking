@@ -10,6 +10,7 @@
         "dependencies": {
           "Prism.Unity": "8.1.97",
           "XH.SmartParking.Assets": "1.0.0",
+          "XH.SmartParking.Controls": "1.0.0",
           "XH.SmartParking.Entities": "1.0.0",
           "XH.SmartParking.IService": "1.0.0",
           "XH.SmartParking.ORM": "1.0.0",
@@ -621,6 +622,11 @@
           "XH.SmartParking.Base.dll": {}
         }
       },
+      "XH.SmartParking.Controls/1.0.0": {
+        "runtime": {
+          "XH.SmartParking.Controls.dll": {}
+        }
+      },
       "XH.SmartParking.Entities/1.0.0": {
         "runtime": {
           "XH.SmartParking.Entities.dll": {}
@@ -629,7 +635,8 @@
       "XH.SmartParking.IService/1.0.0": {
         "dependencies": {
           "Microsoft.Data.SqlClient": "5.1.5",
-          "XH.SmartParking.Base": "1.0.0"
+          "XH.SmartParking.Base": "1.0.0",
+          "XH.SmartParking.Entities": "1.0.0"
         },
         "runtime": {
           "XH.SmartParking.IService.dll": {}
@@ -1110,6 +1117,11 @@
       "sha512": ""
     },
     "XH.SmartParking.Base/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "XH.SmartParking.Controls/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
