@@ -110,7 +110,7 @@
                         <TreeView.Resources>
                             <ControlTemplate TargetType="ToggleButton" x:Key="ArrowButtonTemplate">
                                 <Grid Background="Transparent" Name="back">
-                                    <TextBlock Text="&#xe81d;" FontFamily="{DynamicResource Icons}" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                    <TextBlock Text="&#xe81d;" FontFamily="{StaticResource Icons}" VerticalAlignment="Center" HorizontalAlignment="Center"
                                                RenderTransformOrigin="0.5 0.5" Name="arrow" Foreground="{TemplateBinding Foreground}" FontSize="9" />
                                 </Grid>
                                 <ControlTemplate.Triggers>
@@ -161,9 +161,9 @@
                                                 </Border>
                                                 <ToggleButton x:Name="Expander" Grid.Column="1" ClickMode="Press"
                                                               IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}}"
-                                                              Template="{DynamicResource ArrowButtonTemplate}"
+                                                              Template="{StaticResource ArrowButtonTemplate}"
                                                               Foreground="#4000"/>
-                                                <ItemsPresenter x:Name="ItemsHost" Margin="18,0,0,0" Grid.ColumnSpan="2" Grid.Row="1" />
+                                                <ItemsPresenter x:Name="ItemsHost" Margin="20,0,0,0" Grid.ColumnSpan="2" Grid.Row="1" />
                                             </Grid>
 
 
@@ -206,7 +206,7 @@
                                         <ColumnDefinition/>
                                     </Grid.ColumnDefinitions>
                                     <TextBlock Text="{Binding MenuIcon}" 
-                                               FontFamily="{DynamicResource Icons}" 
+                                               FontFamily="{StaticResource Icons}" 
                                                VerticalAlignment="Center" HorizontalAlignment="Center"
                                                FontSize="15"/>
                                     <TextBlock Text="{Binding MenuHeader}" Grid.Column="1" Margin="5,0,0,0" FontSize="12" VerticalAlignment="Center"/>
@@ -223,7 +223,7 @@
                     <Border Grid.Row="2" Height="140" CornerRadius="15" Margin="20,5,20,10" BorderBrush="#F7F9FA" BorderThickness="1" Background="White">
                         <StackPanel VerticalAlignment="Bottom">
                             <TextBlock Text="点击按钮，打开车辆出入监控页面" FontSize="11" Margin="20,0" TextWrapping="Wrap" TextAlignment="Center" Foreground="#999"/>
-                            <Button Content="打开出入监控" Style="{DynamicResource NormalButtonStyle}" Foreground="White" Height="33"
+                            <Button Content="打开出入监控" Style="{StaticResource NormalButtonStyle}" Foreground="White" Height="33"
                                     Margin="20,10" FontWeight="Bold" Command="{Binding ShowMonitorCommand}">
                                 <Button.Background>
                                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -265,12 +265,12 @@
                         </ResourceDictionary>
                     </StackPanel.Resources>
 
-                    <TextBlock Text="&#xe7ff;" FontFamily="{DynamicResource Icons}" 
+                    <TextBlock Text="&#xe7ff;" FontFamily="{StaticResource Icons}" 
                                VerticalAlignment="Center" FontSize="18" Foreground="#888" Margin="0,0,10,0"/>
-                    <TextBlock Text="&#xe8bd;" FontFamily="{DynamicResource Icons}" VerticalAlignment="Center"
+                    <TextBlock Text="&#xe8bd;" FontFamily="{StaticResource Icons}" VerticalAlignment="Center"
                                FontSize="18" Foreground="#888" Margin="0,0,20,0"/>
                     <ToggleButton Width="30" Height="30" Margin="0,0,5,0"
-                                  Style="{DynamicResource UserIconButtonStyle}"
+                                  Style="{StaticResource UserIconButtonStyle}"
                                   Content="{Binding CurrentUser.UserIcon}"
                                   IsChecked="{Binding IsDropdownAvatar}"
                                   Name="tbtn_avatar"/>
@@ -282,16 +282,16 @@
                                   Margin="0,0,10,0" Name="tbtn_user"
                                   Height="30"
                                   WindowChrome.IsHitTestVisibleInChrome="True"
-                                  Style="{DynamicResource UserInfoButtonStyle}"/>
+                                  Style="{StaticResource UserInfoButtonStyle}"/>
 
-                    <Button Content="&#xe7e6;" FontFamily="{DynamicResource Icons}"
-                            Style="{DynamicResource ControlButtonStyle}"
+                    <Button Content="&#xe7e6;" FontFamily="{StaticResource Icons}"
+                            Style="{StaticResource ControlButtonStyle}"
                             Click="ButtonMin_Click"/>
-                    <Button Content="&#xe694;" FontFamily="{DynamicResource Icons}"
-                            Style="{DynamicResource ControlButtonStyle}"
+                    <Button Content="&#xe694;" FontFamily="{StaticResource Icons}"
+                            Style="{StaticResource ControlButtonStyle}"
                             Click="ButtonMax_Click"/>
-                    <Button Content="&#xe625;" FontFamily="{DynamicResource Icons}"
-                            Style="{DynamicResource ControlButtonStyle}"
+                    <Button Content="&#xe625;" FontFamily="{StaticResource Icons}"
+                            Style="{StaticResource ControlButtonStyle}"
                             Click="Button_Click"/>
                 </StackPanel>
                 <Popup StaysOpen="False" IsOpen="{Binding ElementName=tbtn_user,Path=IsChecked}"
@@ -351,12 +351,12 @@
                             <Border Background="#EEE" Height="0.5" Grid.Row="3"/>
 
                             <Button Content="修改密码" Grid.Row="4" 
-                                    Style="{DynamicResource NormalButtonStyle}"
+                                    Style="{StaticResource NormalButtonStyle}"
                                     Background="Transparent" Foreground="#409EFE"
                                     Margin="5,3" FontSize="12"
                                     Command="{Binding ModifyPasswordCommand}"/>
                             <Button Content="切换账号" Grid.Row="5" 
-                                    Style="{DynamicResource NormalButtonStyle}"
+                                    Style="{StaticResource NormalButtonStyle}"
                                     Background="Transparent" Foreground="#409EFE"
                                     Margin="5,3" FontSize="12"
                                     Command="{Binding SwitchCommand}"/>
@@ -374,35 +374,35 @@
                         </Border>
 
                         <UniformGrid Columns="4" Margin="5">
-                            <Button Style="{DynamicResource AvatarItemButtonStyle}"
+                            <Button Style="{StaticResource AvatarItemButtonStyle}"
                                     Content="pack://siteoforigin:,,,/Avatars/a01.jpg"
                                     CommandParameter="a01.jpg" 
                                     Command="{Binding SetAvatarCommand}"/>
-                            <Button Style="{DynamicResource AvatarItemButtonStyle}"
+                            <Button Style="{StaticResource AvatarItemButtonStyle}"
                                     Content="pack://siteoforigin:,,,/Avatars/a02.jpg"
                                     Command="{Binding SetAvatarCommand}"
                                     CommandParameter="a02.jpg"/>
-                            <Button Style="{DynamicResource AvatarItemButtonStyle}"
+                            <Button Style="{StaticResource AvatarItemButtonStyle}"
                                     Content="pack://siteoforigin:,,,/Avatars/a03.png"
                                     Command="{Binding SetAvatarCommand}"
                                     CommandParameter="a03.png"/>
-                            <Button Style="{DynamicResource AvatarItemButtonStyle}"
+                            <Button Style="{StaticResource AvatarItemButtonStyle}"
                                     Content="pack://siteoforigin:,,,/Avatars/a04.jpg"
                                     Command="{Binding SetAvatarCommand}"
                                     CommandParameter="a04.jpg"/>
-                            <Button Style="{DynamicResource AvatarItemButtonStyle}"
+                            <Button Style="{StaticResource AvatarItemButtonStyle}"
                                     Content="pack://siteoforigin:,,,/Avatars/a05.png"
                                     Command="{Binding SetAvatarCommand}"
                                     CommandParameter="a05.png"/>
-                            <Button Style="{DynamicResource AvatarItemButtonStyle}"
+                            <Button Style="{StaticResource AvatarItemButtonStyle}"
                                     Content="pack://siteoforigin:,,,/Avatars/a06.jpg"
                                     Command="{Binding SetAvatarCommand}"
                                     CommandParameter="a06.jpg"/>
-                            <Button Style="{DynamicResource AvatarItemButtonStyle}"
+                            <Button Style="{StaticResource AvatarItemButtonStyle}"
                                     Content="pack://siteoforigin:,,,/Avatars/a07.jpg"
                                     Command="{Binding SetAvatarCommand}"
                                     CommandParameter="a07.jpg"/>
-                            <Button Style="{DynamicResource AvatarItemButtonStyle}"
+                            <Button Style="{StaticResource AvatarItemButtonStyle}"
                                     Command="{Binding SetAvatarCommand}"
                                     Content="选择" FontSize="12" Foreground="#409EFE"/>
                         </UniformGrid>
@@ -476,7 +476,7 @@
                                                 <TextBlock Text="{TemplateBinding Header}" VerticalAlignment="Center" 
                                                            Margin="10,5,0,5" FontSize="12"/>
                                                 <Grid Grid.Column="1" Name="close_grid" Visibility="Collapsed" Width="30" Margin="0,0,-3,0">
-                                                    <Button Grid.Column="1" Style="{DynamicResource TabCloseButtonStyle}" 
+                                                    <Button Grid.Column="1" Style="{StaticResource TabCloseButtonStyle}" 
                                                             Foreground="{TemplateBinding Foreground}"
                                                             Visibility="Collapsed" Name="close_btn"
                                                             Command="{Binding DataContext.CloseCommand}"/>

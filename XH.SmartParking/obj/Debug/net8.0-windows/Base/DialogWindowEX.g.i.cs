@@ -53,7 +53,7 @@ namespace XH.SmartParking.Base {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/XH.SmartParking;V1.0.0.0;component/base/dialogwindowex.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/XH.SmartParking;component/base/dialogwindowex.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Base\DialogWindowEX.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
