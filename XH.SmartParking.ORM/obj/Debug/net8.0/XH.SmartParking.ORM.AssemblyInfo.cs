@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("XH.SmartParking.ORM")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+970d5f951c180a54be71891f9865d18000377100")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+634fe8017faf1d9ac74270801d706c041d9b1e76")]
 [assembly: System.Reflection.AssemblyProductAttribute("XH.SmartParking.ORM")]
 [assembly: System.Reflection.AssemblyTitleAttribute("XH.SmartParking.ORM")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

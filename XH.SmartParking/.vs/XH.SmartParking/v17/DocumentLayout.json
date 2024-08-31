@@ -6,18 +6,18 @@
       "AbsoluteMoniker": "D:0:0:{737F8C71-0725-4046-921D-8378B1D2E71C}|..\\XH.SmartParking.ORM\\XH.SmartParking.ORM.csproj|d:\\users\\yhl18\\desktop\\wpf\u5B66\u4E60\\smartparking\\xh.smartparking.orm\\xhdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E4E8F10D-162E-4E37-ADE0-D9F9F9944E0B}|XH.SmartParking.csproj|d:\\users\\yhl18\\desktop\\wpf\u5B66\u4E60\\smartparking\\xh.smartparking\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E4E8F10D-162E-4E37-ADE0-D9F9F9944E0B}|XH.SmartParking.csproj|D:\\Users\\yhl18\\Desktop\\WPF\u5B66\u4E60\\SmartParking\\XH.SmartParking\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E4E8F10D-162E-4E37-ADE0-D9F9F9944E0B}|XH.SmartParking.csproj|solutionrelative:viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E4E8F10D-162E-4E37-ADE0-D9F9F9944E0B}|XH.SmartParking.csproj|d:\\users\\yhl18\\desktop\\wpf\u5B66\u4E60\\smartparking\\xh.smartparking\\views\\mainview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{E4E8F10D-162E-4E37-ADE0-D9F9F9944E0B}|XH.SmartParking.csproj|D:\\Users\\yhl18\\Desktop\\WPF\u5B66\u4E60\\SmartParking\\XH.SmartParking\\views\\mainview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{E4E8F10D-162E-4E37-ADE0-D9F9F9944E0B}|XH.SmartParking.csproj|solutionrelative:views\\mainview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1E57B070-5FBB-459B-9DCF-F4198FBE8E5F}|..\\XH.SmartParking.Assets\\XH.SmartParking.Assets.csproj|d:\\users\\yhl18\\desktop\\wpf\u5B66\u4E60\\smartparking\\xh.smartparking.assets\\fonts\\fontlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E4E8F10D-162E-4E37-ADE0-D9F9F9944E0B}|XH.SmartParking.csproj|d:\\users\\yhl18\\desktop\\wpf\u5B66\u4E60\\smartparking\\xh.smartparking\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{E4E8F10D-162E-4E37-ADE0-D9F9F9944E0B}|XH.SmartParking.csproj|D:\\Users\\yhl18\\Desktop\\WPF\u5B66\u4E60\\SmartParking\\XH.SmartParking\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{E4E8F10D-162E-4E37-ADE0-D9F9F9944E0B}|XH.SmartParking.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
@@ -54,7 +54,7 @@
               "RelativeDocumentMoniker": "..\\XH.SmartParking.ORM\\XHDbContext.cs",
               "ToolTip": "D:\\Users\\yhl18\\Desktop\\WPF\u5B66\u4E60\\SmartParking\\XH.SmartParking.ORM\\XHDbContext.cs",
               "RelativeToolTip": "..\\XH.SmartParking.ORM\\XHDbContext.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAQwB0AAAAcAAAA",
+              "ViewState": "AQIAABYAAAAAAAAAAAAUwCQAAABZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-31T05:33:37.475Z",
               "EditorCaption": ""
@@ -92,7 +92,7 @@
               "RelativeDocumentMoniker": "ViewModels\\MainViewModel.cs",
               "ToolTip": "D:\\Users\\yhl18\\Desktop\\WPF\u5B66\u4E60\\SmartParking\\XH.SmartParking\\ViewModels\\MainViewModel.cs",
               "RelativeToolTip": "ViewModels\\MainViewModel.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAAAYwEcAAAAWAAAA",
+              "ViewState": "AQIAACkAAAAAAAAAAAAkwFgAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-31T05:11:16.402Z",
               "EditorCaption": ""

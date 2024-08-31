@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Drawing.Imaging;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using XH.SmartParking.Entities;
 using XH.SmartParking.IService;
 using XH.SmartParking.Models;
 using XH.SmartParking.Service;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace XH.SmartParking.ViewModels
 {
@@ -67,6 +69,7 @@ namespace XH.SmartParking.ViewModels
                     var menuItem = new MenuItemModel
                     {
                         MenuHeader = item.MenuHeader,
+                        //MenuIcon = TryConvertToUnicodeChar(item.MenuIcon).ToString(), // "\0" 是空字符的转义，这里只是示例                   
                         MenuIcon = item.MenuIcon,
                         TargetView = item.TargetView
                     };
@@ -76,6 +79,20 @@ namespace XH.SmartParking.ViewModels
                     menus.Add(menuItem);
                 }
             }
+        }
+        private char? TryConvertToUnicodeChar(string hexCode)
+        {
+            if (string.IsNullOrEmpty(hexCode) || hexCode.Length != 4) // 假设是4位的十六进制数  
+                return null;
+
+            if (int.TryParse(hexCode, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out int codePoint))
+            {
+                // 如果codePoint是一个有效的Unicode码点（通常小于0x110000，但这里只检查非负和非空）  
+                if (codePoint >= 0)
+                    return Convert.ToChar(codePoint);
+            }
+
+            return null; // 转换失败  
         }
     }
 }
