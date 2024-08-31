@@ -1,0 +1,13 @@
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Models\bin\Debug\net8.0-windows\XH.SmartParking.Models.deps.json
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Models\bin\Debug\net8.0-windows\XH.SmartParking.Models.dll
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Models\bin\Debug\net8.0-windows\XH.SmartParking.Models.pdb
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Models\obj\Debug\net8.0-windows\XH.SmartParking.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Models\obj\Debug\net8.0-windows\XH.SmartParking.Models.AssemblyInfoInputs.cache
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Models\obj\Debug\net8.0-windows\XH.SmartParking.Models.AssemblyInfo.cs
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Models\obj\Debug\net8.0-windows\XH.SmartParking.Models.csproj.CoreCompileInputs.cache
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Models\obj\Debug\net8.0-windows\XH.SmartParking.Models.sourcelink.json
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Models\obj\Debug\net8.0-windows\XH.SmartParking.Models.dll
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Models\obj\Debug\net8.0-windows\refint\XH.SmartParking.Models.dll
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Models\obj\Debug\net8.0-windows\XH.SmartParking.Models.pdb
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Models\obj\Debug\net8.0-windows\ref\XH.SmartParking.Models.dll
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Models\obj\Debug\net8.0-windows\XH.SmartParking.Models.csproj.AssemblyReference.cache

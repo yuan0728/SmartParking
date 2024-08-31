@@ -1,0 +1,104 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style TargetType="DataGridCell" x:Key="DataGridCellStyle">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="DataGridCell">
+                    <Grid Background="Transparent">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="FontWeight" Value="Normal"/>
+                <Setter Property="Foreground" Value="#444"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="DataGridColumnHeader" x:Key="DataGridColumnHeaderfStyle">
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="BorderBrush" Value="#DDD"/>
+        <Setter Property="BorderThickness" Value="0,0,0,1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="DataGridColumnHeader">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <TextBlock Text="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                   Foreground="#565656" FontWeight="Bold"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="DataGridRow" x:Key="DataGridRowStyle">
+        <Setter Property="Height" Value="40"/>
+        <!--行头样式-->
+        <Setter Property="HeaderStyle">
+            <Setter.Value>
+                <Style TargetType="DataGridRowHeader">
+                    <Setter Property="Width" Value="0"/>
+                    <Setter Property="Background" Value="Red"/>
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <!--行头模版-->
+        <Setter Property="HeaderTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Grid Margin="5,0">
+                        <TextBlock Text="{Binding Item.Age,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=DataGridRow}}"
+                                   Foreground="#888"/>
+                    </Grid>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <!--行右键菜单-->
+        <Setter Property="ContextMenu">
+            <Setter.Value>
+                <ContextMenu>
+                    <MenuItem Header="复制" Command="{Binding MenuItemCommand}" CommandParameter="{Binding}"/>
+                    <MenuItem Header="剪切" Command="{Binding MenuItemCommand}" CommandParameter="{Binding}"/>
+                    <MenuItem Header="粘贴" Command="{Binding MenuItemCommand}" CommandParameter="{Binding}"/>
+                </ContextMenu>
+            </Setter.Value>
+        </Setter>
+
+
+        <Style.Triggers>
+            <!--条纹间隔，需要配合DataGrid.AlternationCount属性-->
+            <Trigger Property="AlternationIndex" Value="-1" >
+                <Setter Property="Background" Value="#EEE" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#F7F9FA"/>
+            </Trigger>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="#F7F9FA"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--DataGrid样式-->
+    <Style TargetType="{x:Type DataGrid}">
+        <!--网格线颜色-->
+        <Setter Property="CanUserResizeColumns" Value="True"/>
+        <Setter Property="Foreground" Value="#444" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="HorizontalGridLinesBrush" Value="#EEE"/>
+        <Setter Property="VerticalGridLinesBrush" Value="Transparent"/>
+        <Setter Property="CanUserAddRows" Value="False"/>
+        <Setter Property="AutoGenerateColumns" Value="False"/>
+
+        <Setter Property="CellStyle" Value="{StaticResource DataGridCellStyle}"/>
+        <Setter Property="ColumnHeaderStyle" Value="{StaticResource DataGridColumnHeaderfStyle}"/>
+        <Setter Property="RowStyle" Value="{StaticResource DataGridRowStyle}"/>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,81 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ControlTemplate TargetType="UserControl" x:Key="PageTempalte">
+        <Grid Margin="10,5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <!--搜索输入框-->
+            <TextBox VerticalAlignment="Center" Width="300" HorizontalAlignment="Left" 
+                     Text="{Binding SearchKey,UpdateSourceTrigger=PropertyChanged}"
+                     Style="{StaticResource SearchTextBoxStyle}" Name="tb_search">
+                <TextBox.InputBindings>
+                    <KeyBinding Key="Return" Command="{Binding RefreshCommand}"/>
+                </TextBox.InputBindings>
+            </TextBox>
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
+                <!--刷新按钮-->
+                <Button Content="刷新" Style="{StaticResource NormalButtonStyle}"
+                        Command="{Binding RefreshCommand}"
+                        Width="60" Margin="5,0"/>
+                <!--添加按钮-->
+                <Button Content="新建" Style="{StaticResource IconWithContentButtonStyle}"
+                        Command="{Binding ModifyCommand}"
+                        Tag="&#xe603;" Width="80">
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="#FE582D" Offset="0"/>
+                            <GradientStop Color="#F1961A" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+
+
+            <!--内容部分-->
+            <Border CornerRadius="5" Background="White" Grid.Row="1" Margin="0,5,0,10">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="5" Color="Gray" ShadowDepth="0" Opacity="0.3"/>
+                </Border.Effect>
+            </Border>
+
+
+            <ContentPresenter Grid.Row="1"/>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate TargetType="UserControl" x:Key="DialogViewTemplate">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Border Background="#FAFCFF" Grid.Row="1"/>
+            <Border Height="1" Background="#EEE" VerticalAlignment="Bottom"/>
+            <Border Height="1" Grid.Row="2" Background="#EEE" VerticalAlignment="Top"/>
+
+            <TextBlock Text="{Binding Title}" FontSize="14" 
+                        VerticalAlignment="Center" 
+                        FontWeight="Bold"
+                        Foreground="#888" Margin="10,0"/>
+
+            <Button Content="保存" Grid.Row="2" Height="30" Width="100"
+                    HorizontalAlignment="Center" Foreground="White"
+                    Style="{StaticResource NormalButtonStyle}"
+                    Command="{Binding SaveCommand}">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#FE582D" Offset="0"/>
+                        <GradientStop Color="#F1961A" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+
+            <ContentPresenter Grid.Row="1"/>
+        </Grid>
+    </ControlTemplate>
+</ResourceDictionary>
