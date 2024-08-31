@@ -46,6 +46,35 @@
           }
         }
       },
+      "LiveCharts/0.9.7": {
+        "type": "package",
+        "compile": {
+          "lib/net45/LiveCharts.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net45/LiveCharts.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "LiveCharts.Wpf/0.9.7": {
+        "type": "package",
+        "dependencies": {
+          "LiveCharts": "0.9.7"
+        },
+        "compile": {
+          "lib/net45/LiveCharts.Wpf.dll": {
+            "related": ".pdb;.XML"
+          }
+        },
+        "runtime": {
+          "lib/net45/LiveCharts.Wpf.dll": {
+            "related": ".pdb;.XML"
+          }
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
         "type": "package",
         "compile": {
@@ -1220,6 +1249,19 @@
           "bin/placeholder/XH.SmartParking.IService.dll": {}
         }
       },
+      "XH.SmartParking.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Prism.Unity": "8.1.97"
+        },
+        "compile": {
+          "bin/placeholder/XH.SmartParking.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/XH.SmartParking.Models.dll": {}
+        }
+      },
       "XH.SmartParking.ORM/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -1293,6 +1335,46 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "LiveCharts/0.9.7": {
+      "sha512": "p4xyBrUaNNfkWZSNsIle0r51cyVyFg0Yi0uBRZM5GQtdFiA/7guZHlffFyNUILIdux10Ch2hUaJpcZENVU9aaQ==",
+      "type": "package",
+      "path": "livecharts/0.9.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/LiveCharts.dll",
+        "lib/net40/LiveCharts.pdb",
+        "lib/net40/LiveCharts.xml",
+        "lib/net45/LiveCharts.dll",
+        "lib/net45/LiveCharts.pdb",
+        "lib/net45/LiveCharts.xml",
+        "lib/portable-net45+win8+wp8/LiveCharts.XML",
+        "lib/portable-net45+win8+wp8/LiveCharts.dll",
+        "lib/portable-net45+win8+wp8/LiveCharts.pdb",
+        "livecharts.0.9.7.nupkg.sha512",
+        "livecharts.nuspec",
+        "readme.txt"
+      ]
+    },
+    "LiveCharts.Wpf/0.9.7": {
+      "sha512": "lv6YZoK0B4yWykMq5b9grZXtIbTj+OWu4sVN9GDpdgV6zffu64m4d5CW8KSjfSl9rB8VU649x1NZvhoU67hCDg==",
+      "type": "package",
+      "path": "livecharts.wpf/0.9.7",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/LiveCharts.Wpf.XML",
+        "lib/net40/LiveCharts.Wpf.dll",
+        "lib/net40/LiveCharts.Wpf.pdb",
+        "lib/net45/LiveCharts.Wpf.XML",
+        "lib/net45/LiveCharts.Wpf.dll",
+        "lib/net45/LiveCharts.Wpf.pdb",
+        "livecharts.wpf.0.9.7.nupkg.sha512",
+        "livecharts.wpf.nuspec",
+        "tools/install.ps1"
       ]
     },
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
@@ -3257,6 +3339,11 @@
       "path": "../XH.SmartParking.IService/XH.SmartParking.IService.csproj",
       "msbuildProject": "../XH.SmartParking.IService/XH.SmartParking.IService.csproj"
     },
+    "XH.SmartParking.Models/1.0.0": {
+      "type": "project",
+      "path": "../XH.SmartParking.Models/XH.SmartParking.Models.csproj",
+      "msbuildProject": "../XH.SmartParking.Models/XH.SmartParking.Models.csproj"
+    },
     "XH.SmartParking.ORM/1.0.0": {
       "type": "project",
       "path": "../XH.SmartParking.ORM/XH.SmartParking.ORM.csproj",
@@ -3270,11 +3357,13 @@
   },
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
+      "LiveCharts.Wpf >= 0.9.7",
       "Prism.Unity >= 8.1.97",
       "XH.SmartParking.Assets >= 1.0.0",
       "XH.SmartParking.Controls >= 1.0.0",
       "XH.SmartParking.Entities >= 1.0.0",
       "XH.SmartParking.IService >= 1.0.0",
+      "XH.SmartParking.Models >= 1.0.0",
       "XH.SmartParking.ORM >= 1.0.0",
       "XH.SmartParking.Service >= 1.0.0"
     ]
@@ -3323,6 +3412,9 @@
             "D:\\Users\\yhl18\\Desktop\\WPF学习\\SmartParking\\XH.SmartParking.IService\\XH.SmartParking.IService.csproj": {
               "projectPath": "D:\\Users\\yhl18\\Desktop\\WPF学习\\SmartParking\\XH.SmartParking.IService\\XH.SmartParking.IService.csproj"
             },
+            "D:\\Users\\yhl18\\Desktop\\WPF学习\\SmartParking\\XH.SmartParking.Models\\XH.SmartParking.Models.csproj": {
+              "projectPath": "D:\\Users\\yhl18\\Desktop\\WPF学习\\SmartParking\\XH.SmartParking.Models\\XH.SmartParking.Models.csproj"
+            },
             "D:\\Users\\yhl18\\Desktop\\WPF学习\\SmartParking\\XH.SmartParking.ORM\\XH.SmartParking.ORM.csproj": {
               "projectPath": "D:\\Users\\yhl18\\Desktop\\WPF学习\\SmartParking\\XH.SmartParking.ORM\\XH.SmartParking.ORM.csproj"
             },
@@ -3347,6 +3439,10 @@
       "net8.0-windows7.0": {
         "targetAlias": "net8.0-windows",
         "dependencies": {
+          "LiveCharts.Wpf": {
+            "target": "Package",
+            "version": "[0.9.7, )"
+          },
           "Prism.Unity": {
             "target": "Package",
             "version": "[8.1.97, )"
@@ -3374,5 +3470,27 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "已使用“.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1”而不是项目目标框架“net8.0-windows7.0”还原包“LiveCharts 0.9.7”。此包可能与项目不完全兼容。",
+      "libraryId": "LiveCharts",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "已使用“.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1”而不是项目目标框架“net8.0-windows7.0”还原包“LiveCharts.Wpf 0.9.7”。此包可能与项目不完全兼容。",
+      "libraryId": "LiveCharts.Wpf",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    }
+  ]
 }

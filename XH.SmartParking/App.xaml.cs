@@ -33,6 +33,7 @@ namespace XH.SmartParking
             // 注册相关的服务
             containerRegistry.Register<DbContext, XHDbContext>();
             containerRegistry.Register<IUserService, UserService>();
+            containerRegistry.Register<IMenuService, MenuService>();
         }
     }
 }

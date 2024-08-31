@@ -1,11 +1,364 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0-windows7.0": {
+      "Microsoft.Xaml.Behaviors.Wpf/1.1.31": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Prism.Core/8.1.97": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Prism.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/Prism.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Prism.Unity/8.1.97": {
+        "type": "package",
+        "dependencies": {
+          "Prism.Wpf": "8.1.97",
+          "Unity.Container": "5.11.11"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Prism.Unity.Wpf.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Prism.Unity.Wpf.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Prism.Wpf/8.1.97": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.31",
+          "Prism.Core": "8.1.97"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Prism.Wpf.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Prism.Wpf.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Threading.Tasks.Extensions/4.5.2": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.1/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/_._": {}
+        }
+      },
+      "Unity.Abstractions/5.11.7": {
+        "type": "package",
+        "dependencies": {
+          "System.Threading.Tasks.Extensions": "4.5.2"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Unity.Abstractions.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Unity.Abstractions.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "Unity.Container/5.11.11": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2",
+          "Unity.Abstractions": "5.11.7"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Unity.Container.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Unity.Container.dll": {
+            "related": ".pdb"
+          }
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Microsoft.Xaml.Behaviors.Wpf/1.1.31": {
+      "sha512": "LZpuf82ACZWldmfMuv3CTUMDh3o0xo0uHUaybR5HgqVLDBJJ9RZLykplQ/bTJd0/VDt3EhD4iDgUgbdIUAM+Kg==",
+      "type": "package",
+      "path": "microsoft.xaml.behaviors.wpf/1.1.31",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Design/Microsoft.Xaml.Behaviors.Design.dll",
+        "lib/net45/Microsoft.Xaml.Behaviors.dll",
+        "lib/net45/Microsoft.Xaml.Behaviors.pdb",
+        "lib/net45/Microsoft.Xaml.Behaviors.xml",
+        "lib/net5.0-windows7.0/Design/Microsoft.Xaml.Behaviors.DesignTools.dll",
+        "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.dll",
+        "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.pdb",
+        "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.xml",
+        "lib/netcoreapp3.1/Design/Microsoft.Xaml.Behaviors.DesignTools.dll",
+        "lib/netcoreapp3.1/Microsoft.Xaml.Behaviors.dll",
+        "lib/netcoreapp3.1/Microsoft.Xaml.Behaviors.pdb",
+        "lib/netcoreapp3.1/Microsoft.Xaml.Behaviors.xml",
+        "microsoft.xaml.behaviors.wpf.1.1.31.nupkg.sha512",
+        "microsoft.xaml.behaviors.wpf.nuspec",
+        "tools/Install.ps1"
+      ]
+    },
+    "Prism.Core/8.1.97": {
+      "sha512": "EP5zrvWddw3eSq25Y7hHnDYdmLZEC2Z/gMrvmHzUuLbitmA1UaS7wQUlSwNr9Km8lzJNCvytFnaGBEFukHgoHg==",
+      "type": "package",
+      "path": "prism.core/8.1.97",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/net461/Prism.dll",
+        "lib/net461/Prism.pdb",
+        "lib/net461/Prism.xml",
+        "lib/net47/Prism.dll",
+        "lib/net47/Prism.pdb",
+        "lib/net47/Prism.xml",
+        "lib/net5.0/Prism.dll",
+        "lib/net5.0/Prism.pdb",
+        "lib/net5.0/Prism.xml",
+        "lib/netstandard2.0/Prism.dll",
+        "lib/netstandard2.0/Prism.pdb",
+        "lib/netstandard2.0/Prism.xml",
+        "prism-logo.png",
+        "prism.core.8.1.97.nupkg.sha512",
+        "prism.core.nuspec",
+        "readme.txt"
+      ]
+    },
+    "Prism.Unity/8.1.97": {
+      "sha512": "PDKDjC9HAFmCEoP8bgCwoGup0Lm0NyvYmN/kLbfO0Q4zmL/sZBDbP2KNC/UguXWOy0iH6fWiH9JYQYCGFZ4oBw==",
+      "type": "package",
+      "path": "prism.unity/8.1.97",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/net461/Prism.Unity.Wpf.dll",
+        "lib/net461/Prism.Unity.Wpf.pdb",
+        "lib/net461/Prism.Unity.Wpf.xml",
+        "lib/net47/Prism.Unity.Wpf.dll",
+        "lib/net47/Prism.Unity.Wpf.pdb",
+        "lib/net47/Prism.Unity.Wpf.xml",
+        "lib/net5.0-windows7.0/Prism.Unity.Wpf.dll",
+        "lib/net5.0-windows7.0/Prism.Unity.Wpf.pdb",
+        "lib/net5.0-windows7.0/Prism.Unity.Wpf.xml",
+        "lib/netcoreapp3.1/Prism.Unity.Wpf.dll",
+        "lib/netcoreapp3.1/Prism.Unity.Wpf.pdb",
+        "lib/netcoreapp3.1/Prism.Unity.Wpf.xml",
+        "prism-logo.png",
+        "prism.unity.8.1.97.nupkg.sha512",
+        "prism.unity.nuspec",
+        "readme.txt"
+      ]
+    },
+    "Prism.Wpf/8.1.97": {
+      "sha512": "ZEa6S1mK35h8/blyb0uR0ed3wkpHtPdhB4eniXINJnTiJMWlGl/As6SVlFFdOPD+qsEdWNYV3xgyQD/ue5cvBA==",
+      "type": "package",
+      "path": "prism.wpf/8.1.97",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/net461/Prism.Wpf.dll",
+        "lib/net461/Prism.Wpf.pdb",
+        "lib/net461/Prism.Wpf.xml",
+        "lib/net47/Prism.Wpf.dll",
+        "lib/net47/Prism.Wpf.pdb",
+        "lib/net47/Prism.Wpf.xml",
+        "lib/net5.0-windows7.0/Prism.Wpf.dll",
+        "lib/net5.0-windows7.0/Prism.Wpf.pdb",
+        "lib/net5.0-windows7.0/Prism.Wpf.xml",
+        "lib/netcoreapp3.1/Prism.Wpf.dll",
+        "lib/netcoreapp3.1/Prism.Wpf.pdb",
+        "lib/netcoreapp3.1/Prism.Wpf.xml",
+        "prism-logo.png",
+        "prism.wpf.8.1.97.nupkg.sha512",
+        "prism.wpf.nuspec",
+        "readme.txt"
+      ]
+    },
+    "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+      "sha512": "wprSFgext8cwqymChhrBLu62LMg/1u92bU+VOwyfBimSPVFXtsNqEWC92Pf9ofzJFlk4IHmJA75EDJn1b2goAQ==",
+      "type": "package",
+      "path": "system.runtime.compilerservices.unsafe/4.5.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Threading.Tasks.Extensions/4.5.2": {
+      "sha512": "BG/TNxDFv0svAzx8OiMXDlsHfGw623BZ8tCXw4YLhDFDvDhNUEV58jKYMGRnkbJNm7c3JNNJDiN7JBMzxRBR2w==",
+      "type": "package",
+      "path": "system.threading.tasks.extensions/4.5.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/netcoreapp2.1/_._",
+        "lib/netstandard1.0/System.Threading.Tasks.Extensions.dll",
+        "lib/netstandard1.0/System.Threading.Tasks.Extensions.xml",
+        "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll",
+        "lib/netstandard2.0/System.Threading.Tasks.Extensions.xml",
+        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.xml",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/netcoreapp2.1/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.threading.tasks.extensions.4.5.2.nupkg.sha512",
+        "system.threading.tasks.extensions.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "Unity.Abstractions/5.11.7": {
+      "sha512": "3ztwGEpe35UJlCUswXoi4uVDp8bJsgPsOmO71nZnNXh51II7t54AbezDbS6sR2z4QnMOpNGDaXbsEkyg6dIfOQ==",
+      "type": "package",
+      "path": "unity.abstractions/5.11.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Unity.Abstractions.dll",
+        "lib/net40/Unity.Abstractions.pdb",
+        "lib/net45/Unity.Abstractions.dll",
+        "lib/net45/Unity.Abstractions.pdb",
+        "lib/net46/Unity.Abstractions.dll",
+        "lib/net46/Unity.Abstractions.pdb",
+        "lib/net47/Unity.Abstractions.dll",
+        "lib/net47/Unity.Abstractions.pdb",
+        "lib/net48/Unity.Abstractions.dll",
+        "lib/net48/Unity.Abstractions.pdb",
+        "lib/netcoreapp1.0/Unity.Abstractions.dll",
+        "lib/netcoreapp1.0/Unity.Abstractions.pdb",
+        "lib/netcoreapp2.0/Unity.Abstractions.dll",
+        "lib/netcoreapp2.0/Unity.Abstractions.pdb",
+        "lib/netcoreapp3.0/Unity.Abstractions.dll",
+        "lib/netcoreapp3.0/Unity.Abstractions.pdb",
+        "lib/netstandard1.0/Unity.Abstractions.dll",
+        "lib/netstandard1.0/Unity.Abstractions.pdb",
+        "lib/netstandard2.0/Unity.Abstractions.dll",
+        "lib/netstandard2.0/Unity.Abstractions.pdb",
+        "unity.abstractions.5.11.7.nupkg.sha512",
+        "unity.abstractions.nuspec"
+      ]
+    },
+    "Unity.Container/5.11.11": {
+      "sha512": "47u4MBG8hxV2ZBUK7LlXcZQW8yWSqUSCRG+2/TBA2CSkxkQlMfVUJ0RJODJsZgsiSgy4N0M8HIr7J88drYR/OQ==",
+      "type": "package",
+      "path": "unity.container/5.11.11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Unity.Container.dll",
+        "lib/net40/Unity.Container.pdb",
+        "lib/net45/Unity.Container.dll",
+        "lib/net45/Unity.Container.pdb",
+        "lib/net46/Unity.Container.dll",
+        "lib/net46/Unity.Container.pdb",
+        "lib/net47/Unity.Container.dll",
+        "lib/net47/Unity.Container.pdb",
+        "lib/net48/Unity.Container.dll",
+        "lib/net48/Unity.Container.pdb",
+        "lib/netcoreapp1.0/Unity.Container.dll",
+        "lib/netcoreapp1.0/Unity.Container.pdb",
+        "lib/netcoreapp2.0/Unity.Container.dll",
+        "lib/netcoreapp2.0/Unity.Container.pdb",
+        "lib/netcoreapp3.0/Unity.Container.dll",
+        "lib/netcoreapp3.0/Unity.Container.pdb",
+        "lib/netstandard1.0/Unity.Container.dll",
+        "lib/netstandard1.0/Unity.Container.pdb",
+        "lib/netstandard2.0/Unity.Container.dll",
+        "lib/netstandard2.0/Unity.Container.pdb",
+        "unity.container.5.11.11.nupkg.sha512",
+        "unity.container.nuspec"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0-windows7.0": [
+      "Prism.Unity >= 8.1.97"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\yhl18\\.nuget\\packages\\": {},
@@ -29,15 +382,15 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net8.0"
+        "net8.0-windows"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://www.nuget.org/api/v2/": {}
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
           "projectReferences": {}
         }
       },
@@ -53,8 +406,14 @@
       }
     },
     "frameworks": {
-      "net8.0": {
-        "targetAlias": "net8.0",
+      "net8.0-windows7.0": {
+        "targetAlias": "net8.0-windows",
+        "dependencies": {
+          "Prism.Unity": {
+            "target": "Package",
+            "version": "[8.1.97, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

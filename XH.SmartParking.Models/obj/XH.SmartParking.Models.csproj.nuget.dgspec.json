@@ -22,15 +22,15 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net8.0-windows"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://www.nuget.org/api/v2/": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
             "projectReferences": {}
           }
         },
@@ -46,8 +46,14 @@
         }
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Prism.Unity": {
+              "target": "Package",
+              "version": "[8.1.97, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

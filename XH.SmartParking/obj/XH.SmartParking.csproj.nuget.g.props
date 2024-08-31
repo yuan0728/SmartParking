@@ -19,5 +19,6 @@
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_Web_WebView2 Condition=" '$(PkgMicrosoft_Web_WebView2)' == '' ">C:\Users\yhl18\.nuget\packages\microsoft.web.webview2\1.0.864.35</PkgMicrosoft_Web_WebView2>
     <PkgMicrosoft_Xaml_Behaviors_Wpf Condition=" '$(PkgMicrosoft_Xaml_Behaviors_Wpf)' == '' ">C:\Users\yhl18\.nuget\packages\microsoft.xaml.behaviors.wpf\1.1.31</PkgMicrosoft_Xaml_Behaviors_Wpf>
+    <PkgLiveCharts_Wpf Condition=" '$(PkgLiveCharts_Wpf)' == '' ">C:\Users\yhl18\.nuget\packages\livecharts.wpf\0.9.7</PkgLiveCharts_Wpf>
   </PropertyGroup>
 </Project>

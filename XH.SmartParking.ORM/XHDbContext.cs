@@ -23,5 +23,6 @@ namespace XH.SmartParking.ORM
         }
 
         public virtual DbSet<SysUser> SysUser { get; set; }
+        public virtual DbSet<SysMenu> SysMenu { get; set; }
     }
 }

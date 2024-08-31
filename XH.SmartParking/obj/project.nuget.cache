@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "IODLSiJYPe904AQPPxBjBTSQvAHy/JoJjL3z1ujerR3eQFNH+3Z8zJ4QAzNOHQxLjs497EkvuGiNvlscfgol9g==",
+  "dgSpecHash": "Jr7OnsPbt779AA6Iwk+cVKSK+2BuAn7RH4FKce4eOV3xdCyO8YTDvtRRM1226d7aKPEaaRthJnrqqBAo36siCQ==",
   "success": true,
   "projectFilePath": "D:\\Users\\yhl18\\Desktop\\WPF学习\\SmartParking\\XH.SmartParking\\XH.SmartParking.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yhl18\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\yhl18\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\yhl18\\.nuget\\packages\\livecharts\\0.9.7\\livecharts.0.9.7.nupkg.sha512",
+    "C:\\Users\\yhl18\\.nuget\\packages\\livecharts.wpf\\0.9.7\\livecharts.wpf.0.9.7.nupkg.sha512",
     "C:\\Users\\yhl18\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\yhl18\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\yhl18\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.5\\microsoft.data.sqlclient.5.1.5.nupkg.sha512",
@@ -68,5 +70,26 @@
     "C:\\Users\\yhl18\\.nuget\\packages\\unity.abstractions\\5.11.7\\unity.abstractions.5.11.7.nupkg.sha512",
     "C:\\Users\\yhl18\\.nuget\\packages\\unity.container\\5.11.11\\unity.container.5.11.11.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "已使用“.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1”而不是项目目标框架“net8.0-windows7.0”还原包“LiveCharts 0.9.7”。此包可能与项目不完全兼容。",
+      "libraryId": "LiveCharts",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "已使用“.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1”而不是项目目标框架“net8.0-windows7.0”还原包“LiveCharts.Wpf 0.9.7”。此包可能与项目不完全兼容。",
+      "libraryId": "LiveCharts.Wpf",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    }
+  ]
 }

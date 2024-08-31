@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0-windows</TargetFramework>
@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\digital_display.ttf" />
+    <None Remove="Fonts\iconfont.ttf" />
     <None Remove="Images\Avatar\002m.jpg" />
     <None Remove="Images\bbb.png" />
     <None Remove="Images\camera.png" />
@@ -25,10 +27,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Styles\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <Resource Include="Fonts\digital_display.ttf" />
+    <Resource Include="Fonts\iconfont.ttf" />
     <Resource Include="Images\Avatar\002m.jpg" />
     <Resource Include="Images\bbb.png" />
     <Resource Include="Images\camera.png" />

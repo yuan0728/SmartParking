@@ -92,3 +92,8 @@ D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking\bin\Debug\net8.0-w
 D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking\bin\Debug\net8.0-windows\XH.SmartParking.Service.pdb
 D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking\bin\Debug\net8.0-windows\XH.SmartParking.Controls.dll
 D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking\bin\Debug\net8.0-windows\XH.SmartParking.Controls.pdb
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking\bin\Debug\net8.0-windows\LiveCharts.dll
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking\bin\Debug\net8.0-windows\LiveCharts.Wpf.dll
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking\bin\Debug\net8.0-windows\XH.SmartParking.Models.dll
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking\bin\Debug\net8.0-windows\XH.SmartParking.Models.pdb
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking\obj\Debug\net8.0-windows\App.baml

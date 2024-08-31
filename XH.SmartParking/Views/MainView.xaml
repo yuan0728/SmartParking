@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:XH.SmartParking.Views"
+        xmlns:p="http://prismlibrary.com/"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         Icon="/XH.SmartParking.Assets;component/Images/Icon.ico"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" FontFamily="Microsoft YaHei"
         FontSize="13" Foreground="#333" FontWeight="ExtraLight"
@@ -12,7 +14,514 @@
         <WindowChrome GlassFrameThickness="-1" 
                       NonClientFrameEdges="None"/>
     </WindowChrome.WindowChrome>
+    <Window.Resources>
+        <Style TargetType="ToggleButton" x:Key="UserIconButtonStyle">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToggleButton">
+                        <Grid>
+                            <Border Width="30" Height="30" CornerRadius="20"
+                                BorderBrush="White" BorderThickness="1" Background="White"
+                                Name="border" Visibility="Collapsed">
+                                <Border.Effect>
+                                    <DropShadowEffect BlurRadius="5" ShadowDepth="0"
+                                                  Color="Black" Opacity="0.3"/>
+                                </Border.Effect>
+                            </Border>
+                            <Border Width="30" Height="30" CornerRadius="20"
+                                BorderBrush="Transparent" BorderThickness="1">
+                                <Border.Background>
+                                    <ImageBrush ImageSource="{Binding Content,RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                                </Border.Background>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Visibility" Value="Visible"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="border" Property="Visibility" Value="Visible"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="Button" x:Key="AvatarItemButtonStyle">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border Width="30" Height="30" CornerRadius="5"
+                                Background="White" Name="border" Visibility="Collapsed">
+                                <Border.Effect>
+                                    <DropShadowEffect BlurRadius="5" ShadowDepth="0"
+                                          Color="Black" Opacity="0.3"/>
+                                </Border.Effect>
+                            </Border>
+                            <Border Width="30" Height="30" CornerRadius="5"
+                                    BorderBrush="White" BorderThickness="1" >
+                                <Border.Background>
+                                    <ImageBrush ImageSource="{Binding Content,RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                                </Border.Background>
+                                <ContentPresenter VerticalAlignment="Center" 
+                                                  HorizontalAlignment="Center" 
+                                                  Visibility="Collapsed"
+                                                  Name="cp"/>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Visibility" Value="Visible"/>
+                            </Trigger>
+                            <Trigger Property="CommandParameter" Value="{x:Null}">
+                                <Setter Property="Visibility" Value="Visible" TargetName="cp"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
     <Grid>
-        
+        <DockPanel>
+            <!--左侧菜单-->
+            <Border BorderBrush="#eee" BorderThickness="0 0 1 0">
+                <Grid Width="200" DockPanel.Dock ="Left">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Horizontal" Margin="0 20" HorizontalAlignment="Center">
+                        <Image Source="/XH.SmartParking.Assets;component/Images/Icon.ico" Width="36"/>
+                        <TextBlock Text="智慧停车场" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                   Foreground="#444" FontWeight="Normal" Margin="10 0"/>
+                    </StackPanel>
+
+                    <TreeView Grid.Row="1" Background="Transparent" BorderThickness="0" ItemsSource="{Binding Menus}">
+                        <TreeView.Resources>
+                            <ControlTemplate TargetType="ToggleButton" x:Key="ArrowButtonTemplate">
+                                <Grid Background="Transparent" Name="back">
+                                    <TextBlock Text="&#xe81d;" FontFamily="{DynamicResource Icons}" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                               RenderTransformOrigin="0.5 0.5" Name="arrow" Foreground="{TemplateBinding Foreground}" FontSize="9" />
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsChecked" Value="True">
+                                        <Setter Property="RenderTransform" TargetName="arrow">
+                                            <Setter.Value>
+                                                <RotateTransform Angle="90" />
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="back" Property="Background" Value="#11000000" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+
+                            <Style TargetType="TreeViewItem">
+                                <Setter Property="IsExpanded" Value="{Binding IsExpanded}"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="TreeViewItem">
+                                            <Grid Background="Transparent" Name="root">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition MaxWidth="30"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto" MinHeight="33"/>
+                                                    <RowDefinition  />
+                                                </Grid.RowDefinitions>
+                                                <Grid.InputBindings>
+                                                    <MouseBinding MouseAction="LeftDoubleClick"
+                                                                  Command="{Binding DataContext.OpenViewCommand,RelativeSource={RelativeSource AncestorType=Window}}"
+                                                                  CommandParameter="{Binding}"/>
+                                                </Grid.InputBindings>
+
+                                                <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}"
+                                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                                        Background="{TemplateBinding Background}"
+                                                        CornerRadius="5" Grid.ColumnSpan="2" Padding="{TemplateBinding Padding}"
+                                                        SnapsToDevicePixels="true"
+                                                        Margin="2,1">
+                                                    <ContentPresenter x:Name="PART_Header" ContentSource="Header"
+                                                                      HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                                      SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                                                    </ContentPresenter>
+                                                </Border>
+                                                <ToggleButton x:Name="Expander" Grid.Column="1" ClickMode="Press"
+                                                              IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}}"
+                                                              Template="{DynamicResource ArrowButtonTemplate}"
+                                                              Foreground="#4000"/>
+                                                <ItemsPresenter x:Name="ItemsHost" Margin="18,0,0,0" Grid.ColumnSpan="2" Grid.Row="1" />
+                                            </Grid>
+
+
+
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsExpanded" Value="false">
+                                                    <Setter Property="Visibility" TargetName="ItemsHost" Value="Collapsed"/>
+                                                </Trigger>
+                                                <Trigger Property="HasItems" Value="false">
+                                                    <Setter Property="Visibility" TargetName="Expander" Value="Hidden"/>
+                                                </Trigger>
+                                                <Trigger Property="IsSelected" Value="true">
+                                                    <Setter Property="Background" TargetName="Bd">
+                                                        <Setter.Value>
+                                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                                                <GradientStop Color="#FE582D" Offset="0"/>
+                                                                <GradientStop Color="#F1961A" Offset="1"/>
+                                                            </LinearGradientBrush>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                    <Setter Property="Foreground" Value="White"/>
+                                                    <Setter Property="Foreground" Value="white" TargetName="Expander"/>
+                                                </Trigger>
+                                                <!--被选中后失去焦点-->
+                                                <DataTrigger Binding="{Binding MenuIcon}" Value="{x:Null}">
+                                                    <Setter Property="Margin" Value="10,0,0,0" TargetName="root"/>
+                                                </DataTrigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+
+                        </TreeView.Resources>
+                        <TreeView.ItemTemplate>
+                            <HierarchicalDataTemplate ItemsSource="{Binding Children}">
+                                <Grid Background="Transparent">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30" Name="c1"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="{Binding MenuIcon}" 
+                                               FontFamily="{DynamicResource Icons}" 
+                                               VerticalAlignment="Center" HorizontalAlignment="Center"
+                                               FontSize="15"/>
+                                    <TextBlock Text="{Binding MenuHeader}" Grid.Column="1" Margin="5,0,0,0" FontSize="12" VerticalAlignment="Center"/>
+                                </Grid>
+                                <HierarchicalDataTemplate.Triggers>
+                                    <DataTrigger Binding="{Binding MenuIcon}" Value="{x:Null}">
+                                        <Setter TargetName="c1" Property="Width" Value="0"/>
+                                    </DataTrigger>
+                                </HierarchicalDataTemplate.Triggers>
+                            </HierarchicalDataTemplate>
+                        </TreeView.ItemTemplate>
+                    </TreeView>
+                    
+                    <Border Grid.Row="2" Height="140" CornerRadius="15" Margin="20,5,20,10" BorderBrush="#F7F9FA" BorderThickness="1" Background="White">
+                        <StackPanel VerticalAlignment="Bottom">
+                            <TextBlock Text="点击按钮，打开车辆出入监控页面" FontSize="11" Margin="20,0" TextWrapping="Wrap" TextAlignment="Center" Foreground="#999"/>
+                            <Button Content="打开出入监控" Style="{DynamicResource NormalButtonStyle}" Foreground="White" Height="33"
+                                    Margin="20,10" FontWeight="Bold" Command="{Binding ShowMonitorCommand}">
+                                <Button.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                        <GradientStop Color="#2096F0" Offset="-0.2"/>
+                                        <GradientStop Color="#A723F0" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Button.Background>
+                            </Button>
+                        </StackPanel>
+                    </Border>
+                    
+                    <Image Source="/Zhaoxi.SmartParking.Assets;component/Images/camera.png" Grid.Row="3" Width="60" VerticalAlignment="Top" Margin="0,-10,0,0">
+                        <Image.Effect>
+                            <DropShadowEffect BlurRadius="5" Color="Gray" ShadowDepth="0" Opacity="0.4"/>
+                        </Image.Effect>
+                    </Image>
+                </Grid>
+            </Border>
+            <!--内容区域-->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="1" Background="#F0F6FB"/>
+
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0">
+                    <Run Text="智慧停车场管理系统" FontSize="14" FontWeight="ExtraBold"/>
+                    <Run Text="v3.0" FontSize="11"/>
+                </TextBlock>
+
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+                    <StackPanel.Resources>
+                        <ResourceDictionary>
+                            <ResourceDictionary.MergedDictionaries>
+                                <ResourceDictionary Source="/XH.SmartParking.Assets;component/Styles/ButtonStyles.xaml"/>
+                            </ResourceDictionary.MergedDictionaries>
+                        </ResourceDictionary>
+                    </StackPanel.Resources>
+
+                    <TextBlock Text="&#xe7ff;" FontFamily="{DynamicResource Icons}" 
+                               VerticalAlignment="Center" FontSize="18" Foreground="#888" Margin="0,0,10,0"/>
+                    <TextBlock Text="&#xe8bd;" FontFamily="{DynamicResource Icons}" VerticalAlignment="Center"
+                               FontSize="18" Foreground="#888" Margin="0,0,20,0"/>
+                    <ToggleButton Width="30" Height="30" Margin="0,0,5,0"
+                                  Style="{DynamicResource UserIconButtonStyle}"
+                                  Content="{Binding CurrentUser.UserIcon}"
+                                  IsChecked="{Binding IsDropdownAvatar}"
+                                  Name="tbtn_avatar"/>
+
+                    <ToggleButton Content="{Binding CurrentUser.RealName}" 
+                                  ContentStringFormat="Hi! {0}"
+                                  VerticalAlignment="Center"
+                                  FontSize="11" FontWeight="Normal" Foreground="#888"
+                                  Margin="0,0,10,0" Name="tbtn_user"
+                                  Height="30"
+                                  WindowChrome.IsHitTestVisibleInChrome="True"
+                                  Style="{DynamicResource UserInfoButtonStyle}"/>
+
+                    <Button Content="&#xe7e6;" FontFamily="{DynamicResource Icons}"
+                            Style="{DynamicResource ControlButtonStyle}"
+                            Click="ButtonMin_Click"/>
+                    <Button Content="&#xe694;" FontFamily="{DynamicResource Icons}"
+                            Style="{DynamicResource ControlButtonStyle}"
+                            Click="ButtonMax_Click"/>
+                    <Button Content="&#xe625;" FontFamily="{DynamicResource Icons}"
+                            Style="{DynamicResource ControlButtonStyle}"
+                            Click="Button_Click"/>
+                </StackPanel>
+                <Popup StaysOpen="False" IsOpen="{Binding ElementName=tbtn_user,Path=IsChecked}"
+                       PlacementTarget="{Binding ElementName=tbtn_user}" Placement="Right"
+                       HorizontalOffset="-160" VerticalOffset="33"
+                       AllowsTransparency="True">
+                    <Grid Margin="5">
+                        <!--背景-->
+                        <Border Width="160" Height="200" Background="#FFF" CornerRadius="5">
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="10" ShadowDepth="0" Direction="0" Color="Gray" Opacity="0.1"/>
+                            </Border.Effect>
+                        </Border>
+
+                        <!--内容-->
+                        <Grid TextBlock.Foreground="#666">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="80"/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <!--背景-->
+                            <Border CornerRadius="5,5,0,0">
+                                <Border.Background>
+                                    <ImageBrush ImageSource="{Binding CurrentUser.UserIcon}"
+                                Stretch="UniformToFill"/>
+                                </Border.Background>
+                                <Border.Effect>
+                                    <BlurEffect Radius="40"/>
+                                </Border.Effect>
+                                <Border.Clip>
+                                    <RectangleGeometry Rect="0,0,160,200" RadiusX="5" RadiusY="5"/>
+                                </Border.Clip>
+                            </Border>
+
+                            <Border Width="50" Height="50" CornerRadius="10"
+                                    Margin="0,0,5,0" BorderBrush="White" BorderThickness="1">
+                                <Border.Background>
+                                    <ImageBrush ImageSource="{Binding CurrentUser.UserIcon}"/>
+                                </Border.Background>
+                            </Border>
+
+                            <TextBlock Text="{Binding CurrentUser.RealName}" 
+                                       Grid.Row="1" HorizontalAlignment="Center"
+                                       FontWeight="Bold"/>
+
+                            <StackPanel Grid.Row="2" VerticalAlignment="Center" 
+                                        HorizontalAlignment="Center"
+                                        Orientation="Horizontal" TextBlock.FontSize="11">
+                                <TextBlock Text="{Binding CurrentUser.Age}" Margin="5,0"/>
+                                <TextBlock Text="{Binding CurrentUser.Gender}" Margin="5,0"/>
+                            </StackPanel>
+
+                            <Border Background="#EEE" Height="0.5" Grid.Row="3"/>
+
+                            <Button Content="修改密码" Grid.Row="4" 
+                                    Style="{DynamicResource NormalButtonStyle}"
+                                    Background="Transparent" Foreground="#409EFE"
+                                    Margin="5,3" FontSize="12"
+                                    Command="{Binding ModifyPasswordCommand}"/>
+                            <Button Content="切换账号" Grid.Row="5" 
+                                    Style="{DynamicResource NormalButtonStyle}"
+                                    Background="Transparent" Foreground="#409EFE"
+                                    Margin="5,3" FontSize="12"
+                                    Command="{Binding SwitchCommand}"/>
+                        </Grid>
+                    </Grid>
+                </Popup>
+                <Popup StaysOpen="False" IsOpen="{Binding ElementName=tbtn_avatar,Path=IsChecked}"
+                       PlacementTarget="{Binding ElementName=tbtn_avatar}"
+                       AllowsTransparency="True">
+                    <Grid Margin="5">
+                        <Border Width="160" Height="100" Background="#FFF" CornerRadius="5">
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="10" ShadowDepth="0" Direction="0" Color="Gray" Opacity="0.1"/>
+                            </Border.Effect>
+                        </Border>
+
+                        <UniformGrid Columns="4" Margin="5">
+                            <Button Style="{DynamicResource AvatarItemButtonStyle}"
+                                    Content="pack://siteoforigin:,,,/Avatars/a01.jpg"
+                                    CommandParameter="a01.jpg" 
+                                    Command="{Binding SetAvatarCommand}"/>
+                            <Button Style="{DynamicResource AvatarItemButtonStyle}"
+                                    Content="pack://siteoforigin:,,,/Avatars/a02.jpg"
+                                    Command="{Binding SetAvatarCommand}"
+                                    CommandParameter="a02.jpg"/>
+                            <Button Style="{DynamicResource AvatarItemButtonStyle}"
+                                    Content="pack://siteoforigin:,,,/Avatars/a03.png"
+                                    Command="{Binding SetAvatarCommand}"
+                                    CommandParameter="a03.png"/>
+                            <Button Style="{DynamicResource AvatarItemButtonStyle}"
+                                    Content="pack://siteoforigin:,,,/Avatars/a04.jpg"
+                                    Command="{Binding SetAvatarCommand}"
+                                    CommandParameter="a04.jpg"/>
+                            <Button Style="{DynamicResource AvatarItemButtonStyle}"
+                                    Content="pack://siteoforigin:,,,/Avatars/a05.png"
+                                    Command="{Binding SetAvatarCommand}"
+                                    CommandParameter="a05.png"/>
+                            <Button Style="{DynamicResource AvatarItemButtonStyle}"
+                                    Content="pack://siteoforigin:,,,/Avatars/a06.jpg"
+                                    Command="{Binding SetAvatarCommand}"
+                                    CommandParameter="a06.jpg"/>
+                            <Button Style="{DynamicResource AvatarItemButtonStyle}"
+                                    Content="pack://siteoforigin:,,,/Avatars/a07.jpg"
+                                    Command="{Binding SetAvatarCommand}"
+                                    CommandParameter="a07.jpg"/>
+                            <Button Style="{DynamicResource AvatarItemButtonStyle}"
+                                    Command="{Binding SetAvatarCommand}"
+                                    Content="选择" FontSize="12" Foreground="#409EFE"/>
+                        </UniformGrid>
+                    </Grid>
+                </Popup>
+
+                <TabControl Grid.Row="1" Background="Transparent"
+                            BorderThickness="0" p:RegionManager.RegionName="MainRegion">
+                    <TabControl.Resources>
+
+                        <Style TargetType="TabControl">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="TabControl">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <Border Background="#FAFCFF" BorderBrush="#EEE" BorderThickness="0,1"/>
+                                            <TabPanel x:Name="HeaderPanel"
+                                                      Panel.ZIndex="1"
+                                                      Margin="0,3"
+                                                      IsItemsHost="True"
+                                                      KeyboardNavigation.TabIndex="1"
+                                                      Background="Transparent" />
+
+                                            <ContentPresenter x:Name="PART_SelectedContentHost"
+                                                              Grid.Row="1"
+                                                              ContentSource="SelectedContent" />
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+
+
+                        <Style TargetType="Button" x:Key="TabCloseButtonStyle">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border VerticalAlignment="Center" HorizontalAlignment="Center" 
+                                                CornerRadius="3" Background="Transparent"
+                                                Name="back">
+                                            <Path Data="M0 0 8 8M0 8 8 0" Margin="5" Stroke="{TemplateBinding Foreground}" StrokeThickness="1"/>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#19000000" TargetName="back"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+
+
+                        <Style TargetType="TabItem">
+                            <Setter Property="Header" Value="{Binding DataContext.PageTitle}"/>
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Foreground" Value="#444"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="TabItem">
+                                        <Border Background="{TemplateBinding Background}" Height="28" CornerRadius="5" Margin="2,0">
+                                            <Grid Margin="5,0,3,0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition Width="auto" MaxWidth="30" MinWidth="10"/>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Text="{TemplateBinding Header}" VerticalAlignment="Center" 
+                                                           Margin="10,5,0,5" FontSize="12"/>
+                                                <Grid Grid.Column="1" Name="close_grid" Visibility="Collapsed" Width="30" Margin="0,0,-3,0">
+                                                    <Button Grid.Column="1" Style="{DynamicResource TabCloseButtonStyle}" 
+                                                            Foreground="{TemplateBinding Foreground}"
+                                                            Visibility="Collapsed" Name="close_btn"
+                                                            Command="{Binding DataContext.CloseCommand}"/>
+                                                </Grid>
+                                            </Grid>
+                                        </Border>
+
+                                        <ControlTemplate.Triggers>
+                                            <DataTrigger Binding="{Binding DataContext.IsCanClose}" Value="True">
+                                                <Setter TargetName="close_grid" Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Visibility" Value="Visible" TargetName="close_btn"/>
+                                            </Trigger>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter Property="Visibility" Value="Visible" TargetName="close_btn"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#EEE"/>
+                                </Trigger>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Background">
+                                        <Setter.Value>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                                <GradientStop Color="#FE582D" Offset="0"/>
+                                                <GradientStop Color="#F1961A" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter Property="Foreground" Value="White"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+
+                    </TabControl.Resources>
+                </TabControl>
+
+            </Grid>
+        </DockPanel>
+
+        <ContentControl p:RegionManager.RegionName="MonitorRegion"/>
     </Grid>
 </Window>

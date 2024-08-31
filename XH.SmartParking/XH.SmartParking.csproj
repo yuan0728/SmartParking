@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
     <PackageReference Include="Prism.Unity" Version="8.1.97" />
   </ItemGroup>
 
@@ -21,6 +22,7 @@
     <ProjectReference Include="..\XH.SmartParking.Controls\XH.SmartParking.Controls.csproj" />
     <ProjectReference Include="..\XH.SmartParking.Entities\XH.SmartParking.Entities.csproj" />
     <ProjectReference Include="..\XH.SmartParking.IService\XH.SmartParking.IService.csproj" />
+    <ProjectReference Include="..\XH.SmartParking.Models\XH.SmartParking.Models.csproj" />
     <ProjectReference Include="..\XH.SmartParking.ORM\XH.SmartParking.ORM.csproj" />
     <ProjectReference Include="..\XH.SmartParking.Service\XH.SmartParking.Service.csproj" />
   </ItemGroup>

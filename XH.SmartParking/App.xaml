@@ -4,6 +4,25 @@
              xmlns:local="clr-namespace:XH.SmartParking"
              xmlns:p="http://prismlibrary.com/">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/XH.SmartParking.Assets;component/Styles/TextBoxStyles.xaml"/>
+                <ResourceDictionary Source="/XH.SmartParking.Assets;component/Styles/ButtonStyles.xaml"/>
+                <ResourceDictionary Source="/XH.SmartParking.Assets;component/Styles/ScrollViewerStyle.xaml"/>
+
+                <ResourceDictionary Source="/XH.SmartParking.Assets;component/Styles/ComboBoxStyle.xaml"/>
+                <ResourceDictionary Source="/XH.SmartParking.Assets;component/Styles/DatePickerStyle.xaml"/>
+                <ResourceDictionary Source="/XH.SmartParking.Assets;component/Styles/DataGridStyle.xaml"/>
+
+                <ResourceDictionary Source="/XH.SmartParking.Assets;component/Styles/PageBaseTempalte.xaml"/>
+
+                <ResourceDictionary Source="/XH.SmartParking.Assets;component/Styles/CollectionStyles.xaml"/>
+
+                <ResourceDictionary>
+                    <FontFamily x:Key="Icons">/XH.SmartParking.Assets;component/Fonts/iconfont.ttf#zx_icons</FontFamily>
+                    <FontFamily x:Key="DigitalDisplay">/XH.SmartParking.Assets;component/Fonts/#Digital Display</FontFamily>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </p:PrismApplication>

@@ -23,5 +23,24 @@ namespace XH.SmartParking.Views
         {
             InitializeComponent();
         }
+
+        private void ButtonMin_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        private void ButtonMax_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.WindowState == WindowState.Maximized)
+                this.WindowState = WindowState.Normal;
+            else
+                this.WindowState = WindowState.Maximized;
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }
