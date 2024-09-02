@@ -14,3 +14,6 @@ D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Controls\obj\Debug
 D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Controls\obj\Debug\net8.0-windows\refint\XH.SmartParking.Controls.dll
 D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Controls\obj\Debug\net8.0-windows\XH.SmartParking.Controls.pdb
 D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Controls\obj\Debug\net8.0-windows\ref\XH.SmartParking.Controls.dll
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Controls\obj\Debug\net8.0-windows\CircularProgressBar.g.cs
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Controls\obj\Debug\net8.0-windows\XH.SmartParking.Controls_MarkupCompile.lref
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking.Controls\obj\Debug\net8.0-windows\CircularProgressBar.baml

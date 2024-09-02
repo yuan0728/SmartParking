@@ -294,6 +294,7 @@
                             Style="{StaticResource ControlButtonStyle}"
                             Click="Button_Click"/>
                 </StackPanel>
+                
                 <Popup StaysOpen="False" IsOpen="{Binding ElementName=tbtn_user,Path=IsChecked}"
                        PlacementTarget="{Binding ElementName=tbtn_user}" Placement="Right"
                        HorizontalOffset="-160" VerticalOffset="33"
@@ -319,8 +320,7 @@
                             <!--背景-->
                             <Border CornerRadius="5,5,0,0">
                                 <Border.Background>
-                                    <ImageBrush ImageSource="{Binding CurrentUser.UserIcon}"
-                                Stretch="UniformToFill"/>
+                                    <ImageBrush ImageSource="{Binding CurrentUser.UserIcon}" Stretch="UniformToFill"/>
                                 </Border.Background>
                                 <Border.Effect>
                                     <BlurEffect Radius="40"/>
@@ -363,6 +363,7 @@
                         </Grid>
                     </Grid>
                 </Popup>
+                
                 <Popup StaysOpen="False" IsOpen="{Binding ElementName=tbtn_avatar,Path=IsChecked}"
                        PlacementTarget="{Binding ElementName=tbtn_avatar}"
                        AllowsTransparency="True">
@@ -412,7 +413,6 @@
                 <TabControl Grid.Row="1" Background="Transparent"
                             BorderThickness="0" p:RegionManager.RegionName="MainRegion">
                     <TabControl.Resources>
-
                         <Style TargetType="TabControl">
                             <Setter Property="Template">
                                 <Setter.Value>

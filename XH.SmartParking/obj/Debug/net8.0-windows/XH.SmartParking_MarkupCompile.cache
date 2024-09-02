@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking\App.xaml
-31581877162
+4-1362528715
 
-91968667747
+11-1708506456
 254-499817390
-Base\DialogWindowEX.xaml;Views\LoginView.xaml;Views\MainView.xaml;
+Base\DialogWindowEX.xaml;Views\LoginView.xaml;Views\MainView.xaml;Views\Pages\DashboardView.xaml;
 
 False
 

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Prism.Ioc;
+using Prism.Regions;
 using Prism.Unity;
 using System.Configuration;
 using System.Data;
@@ -9,6 +10,7 @@ using XH.SmartParking.IService;
 using XH.SmartParking.ORM;
 using XH.SmartParking.Service;
 using XH.SmartParking.Views;
+using XH.SmartParking.Views.Pages;
 
 namespace XH.SmartParking
 {
@@ -23,6 +25,14 @@ namespace XH.SmartParking
             return Container.Resolve<MainView>();
         }
 
+        protected override void InitializeShell(Window shell)
+        {
+            base.InitializeShell(shell);
+
+            // 打开初始页面
+            Container.Resolve<IRegionManager>().RegisterViewWithRegion("MainRegion", "DashboardView");
+        }
+
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             // 注册弹窗父类
@@ -34,6 +44,9 @@ namespace XH.SmartParking
             containerRegistry.Register<DbContext, XHDbContext>();
             containerRegistry.Register<IUserService, UserService>();
             containerRegistry.Register<IMenuService, MenuService>();
+
+            // 注册导航
+            containerRegistry.RegisterForNavigation<DashboardView>();
         }
     }
 }

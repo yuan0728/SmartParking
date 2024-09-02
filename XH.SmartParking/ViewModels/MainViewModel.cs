@@ -19,8 +19,6 @@ namespace XH.SmartParking.ViewModels
 {
     public class MainViewModel : BindableBase
     {
-
-
         private ObservableCollection<MenuItemModel> _menus = new ObservableCollection<MenuItemModel>();
 
         public ObservableCollection<MenuItemModel> Menus
@@ -43,7 +41,6 @@ namespace XH.SmartParking.ViewModels
             // 加载菜单
             origMenus = menuService.GetMeunList().ToList();
             FillMenus(Menus, 0);
-            ;
         }
 
         private void OpenLoginWindow()
@@ -69,10 +66,12 @@ namespace XH.SmartParking.ViewModels
                     var menuItem = new MenuItemModel
                     {
                         MenuHeader = item.MenuHeader,
-                        //MenuIcon = TryConvertToUnicodeChar(item.MenuIcon).ToString(), // "\0" 是空字符的转义，这里只是示例                   
+                        // 可以转换为十六进制字符表示
+                        //MenuIcon = string.IsNullOrEmpty(item.MenuIcon) ? null : ((char)Convert.ToInt32(item.MenuIcon, 16)).ToString(),
                         MenuIcon = item.MenuIcon,
                         TargetView = item.TargetView
                     };
+
                     // item.MenuId 是 menuItem.Children 的父Id
                     FillMenus(menuItem.Children, item.MenuId);
 
