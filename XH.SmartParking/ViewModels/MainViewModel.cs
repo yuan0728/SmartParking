@@ -1,4 +1,7 @@
-﻿using Prism.Mvvm;
+﻿using Microsoft.IdentityModel.Tokens;
+using Prism.Commands;
+using Prism.Mvvm;
+using Prism.Regions;
 using Prism.Services.Dialogs;
 using System;
 using System.Collections.Generic;
@@ -27,22 +30,46 @@ namespace XH.SmartParking.ViewModels
             set { SetProperty<ObservableCollection<MenuItemModel>>(ref _menus, value); }
         }
 
+
+        public DelegateCommand<object> OpenViewCommand { get; set; }
         private List<SysMenu> origMenus;
 
         private readonly IDialogService _dialogService;
         private readonly IMenuService _menuService;
-        public MainViewModel(IDialogService dialogService, IMenuService menuService)
+        private readonly IRegionManager _regionManager;
+        public MainViewModel(IDialogService dialogService, IMenuService menuService,IRegionManager regionManager)
         {
             _dialogService = dialogService;
             _menuService = menuService;
+            _regionManager = regionManager;
             // 打开登录窗口
             OpenLoginWindow();
 
             // 加载菜单
             origMenus = menuService.GetMeunList().ToList();
             FillMenus(Menus, 0);
+
+            // 打开窗口
+            OpenViewCommand = new DelegateCommand<object>(DoOpenView);
+
         }
 
+        // 打开窗口
+        private void DoOpenView(object view)
+        {
+            // 如果双击的时候是父节点 关闭或者打开
+            MenuItemModel menuItem = view as MenuItemModel;
+            if (menuItem.Children != null && menuItem.Children.Count != 0)
+            {
+                menuItem.IsExpanded = !menuItem.IsExpanded;
+            }
+            else if (!string.IsNullOrEmpty(menuItem.TargetView))
+            {
+                _regionManager.RequestNavigate("MainRegion", menuItem.TargetView);
+            }
+        }
+
+        // 打开登录窗口
         private void OpenLoginWindow()
         {
             _dialogService.ShowDialog("LoginView", result =>
@@ -56,7 +83,8 @@ namespace XH.SmartParking.ViewModels
             });
         }
 
-        private void FillMenus(ObservableCollection<MenuItemModel> menus, int parent_id)
+        // 填充菜单
+        public void FillMenus(ObservableCollection<MenuItemModel> menus, int parent_id)
         {
             var sub = origMenus.Where(x => x.ParentId == parent_id).OrderBy(o => o.Index).ToList();
             if (sub.Count() > 0)
@@ -79,19 +107,6 @@ namespace XH.SmartParking.ViewModels
                 }
             }
         }
-        private char? TryConvertToUnicodeChar(string hexCode)
-        {
-            if (string.IsNullOrEmpty(hexCode) || hexCode.Length != 4) // 假设是4位的十六进制数  
-                return null;
-
-            if (int.TryParse(hexCode, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out int codePoint))
-            {
-                // 如果codePoint是一个有效的Unicode码点（通常小于0x110000，但这里只检查非负和非空）  
-                if (codePoint >= 0)
-                    return Convert.ToChar(codePoint);
-            }
-
-            return null; // 转换失败  
-        }
+        
     }
 }

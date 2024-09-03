@@ -148,7 +148,7 @@ namespace Zhaoxi.SmartParking.Controls {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/XH.SmartParking.Controls;V1.0.0.0;component/loading.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/XH.SmartParking.Controls;component/loading.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Loading.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

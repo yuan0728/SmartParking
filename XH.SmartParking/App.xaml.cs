@@ -30,7 +30,8 @@ namespace XH.SmartParking
             base.InitializeShell(shell);
 
             // 打开初始页面
-            Container.Resolve<IRegionManager>().RegisterViewWithRegion("MainRegion", "DashboardView");
+            //Container.Resolve<IRegionManager>().RegisterViewWithRegion("MainRegion", "DashboardView");
+            Container.Resolve<IRegionManager>().RequestNavigate("MainRegion", "DashboardView");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -47,6 +48,8 @@ namespace XH.SmartParking
 
             // 注册导航
             containerRegistry.RegisterForNavigation<DashboardView>();
+            containerRegistry.RegisterForNavigation<MenuManagementView>();
+            containerRegistry.RegisterForNavigation<UserManagementView>();
         }
     }
 }

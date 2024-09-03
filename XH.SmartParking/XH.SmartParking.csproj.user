@@ -19,6 +19,12 @@
     <Compile Update="Views\Pages\DashboardView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Pages\MenuManagementView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Pages\UserManagementView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Base\DialogWindowEX.xaml">
@@ -31,6 +37,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\DashboardView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\MenuManagementView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\UserManagementView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

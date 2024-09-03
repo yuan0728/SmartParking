@@ -14,7 +14,7 @@
         <WindowChrome GlassFrameThickness="-1" 
                       NonClientFrameEdges="None"/>
     </WindowChrome.WindowChrome>
-    <Window.Resources>
+    <Window.Resources> 
         <Style TargetType="ToggleButton" x:Key="UserIconButtonStyle">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
@@ -146,7 +146,6 @@
                                                                   Command="{Binding DataContext.OpenViewCommand,RelativeSource={RelativeSource AncestorType=Window}}"
                                                                   CommandParameter="{Binding}"/>
                                                 </Grid.InputBindings>
-
                                                 <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}"
                                                         BorderThickness="{TemplateBinding BorderThickness}"
                                                         Background="{TemplateBinding Background}"
@@ -165,8 +164,6 @@
                                                               Foreground="#4000"/>
                                                 <ItemsPresenter x:Name="ItemsHost" Margin="20,0,0,0" Grid.ColumnSpan="2" Grid.Row="1" />
                                             </Grid>
-
-
 
                                             <ControlTemplate.Triggers>
                                                 <Trigger Property="IsExpanded" Value="false">
@@ -219,7 +216,7 @@
                             </HierarchicalDataTemplate>
                         </TreeView.ItemTemplate>
                     </TreeView>
-                    
+
                     <Border Grid.Row="2" Height="140" CornerRadius="15" Margin="20,5,20,10" BorderBrush="#F7F9FA" BorderThickness="1" Background="White">
                         <StackPanel VerticalAlignment="Bottom">
                             <TextBlock Text="点击按钮，打开车辆出入监控页面" FontSize="11" Margin="20,0" TextWrapping="Wrap" TextAlignment="Center" Foreground="#999"/>
@@ -234,7 +231,7 @@
                             </Button>
                         </StackPanel>
                     </Border>
-                    
+
                     <Image Source="/Zhaoxi.SmartParking.Assets;component/Images/camera.png" Grid.Row="3" Width="60" VerticalAlignment="Top" Margin="0,-10,0,0">
                         <Image.Effect>
                             <DropShadowEffect BlurRadius="5" Color="Gray" ShadowDepth="0" Opacity="0.4"/>
@@ -294,7 +291,7 @@
                             Style="{StaticResource ControlButtonStyle}"
                             Click="Button_Click"/>
                 </StackPanel>
-                
+
                 <Popup StaysOpen="False" IsOpen="{Binding ElementName=tbtn_user,Path=IsChecked}"
                        PlacementTarget="{Binding ElementName=tbtn_user}" Placement="Right"
                        HorizontalOffset="-160" VerticalOffset="33"
@@ -363,7 +360,7 @@
                         </Grid>
                     </Grid>
                 </Popup>
-                
+
                 <Popup StaysOpen="False" IsOpen="{Binding ElementName=tbtn_avatar,Path=IsChecked}"
                        PlacementTarget="{Binding ElementName=tbtn_avatar}"
                        AllowsTransparency="True">
@@ -522,6 +519,6 @@
             </Grid>
         </DockPanel>
 
-        <ContentControl p:RegionManager.RegionName="MonitorRegion"/>
+        <!--<ContentControl p:RegionManager.RegionName="MonitorRegion"/>-->
     </Grid>
 </Window>
