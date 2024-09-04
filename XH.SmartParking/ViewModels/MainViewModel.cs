@@ -30,7 +30,6 @@ namespace XH.SmartParking.ViewModels
             set { SetProperty<ObservableCollection<MenuItemModel>>(ref _menus, value); }
         }
 
-
         public DelegateCommand<object> OpenViewCommand { get; set; }
         private List<SysMenu> origMenus;
 

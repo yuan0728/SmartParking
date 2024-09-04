@@ -10,10 +10,12 @@ namespace XH.SmartParking.Models
 {
     public class MenuItemModel : BindableBase
     {
+        public int MenuId { get; set; }
         public string MenuIcon { get; set; }
-        public int ParentId { get; set; }
+        public int? ParentId { get; set; }
         public string MenuHeader { get; set; }
         public bool IsLastChild { get; set; }
+        public int? MenuType { get; set; }
         public string TargetView { get; set; } // 双击这个节点的时候 打开的页面
 
 

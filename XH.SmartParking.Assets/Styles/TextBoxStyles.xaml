@@ -36,7 +36,7 @@
                             </Grid.ColumnDefinitions>
                             <TextBlock Text="&#xe601;" FontFamily="{DynamicResource Icons}"
                                            VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#999" FontSize="14"/>
-                            <TextBlock Text="输入搜索关键词" VerticalAlignment="Center" Margin="3,0" FontSize="11"
+                            <TextBlock Text="输入搜索关键词" VerticalAlignment="Center" Margin="2,0" FontSize="11"
                                            Foreground="#CCC" Grid.Column="1" Visibility="Collapsed" Name="mask"
                                        Effect="{x:Null}"/>
                             <ScrollViewer x:Name="PART_ContentHost"  Grid.Column="1" Focusable="false" 

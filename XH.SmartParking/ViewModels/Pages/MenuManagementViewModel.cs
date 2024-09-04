@@ -1,5 +1,6 @@
 ﻿using Prism.Commands;
 using Prism.Regions;
+using Prism.Services.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -23,23 +24,47 @@ namespace XH.SmartParking.ViewModels.Pages
             get { return _menus; }
             set { SetProperty<ObservableCollection<MenuItemModel>>(ref _menus, value); }
         }
+
+        private string _searchKey;
+
+        public string SearchKey
+        {
+            get { return _searchKey; }
+            set { SetProperty<string>(ref _searchKey, value); }
+        }
+
         public DelegateCommand RefreshCommand { get; set; }
+        public DelegateCommand<object> ModifyCommand { get; set; }
         private readonly IRegionManager _regionManager;
         private readonly IMenuService _menuService;
+        private readonly IDialogService _dialogService;
 
         private List<SysMenu> origMenus;
-        public MenuManagementViewModel(IRegionManager regionManager, IMenuService menuService)
+        public MenuManagementViewModel(IRegionManager regionManager, IMenuService menuService, IDialogService dialogService)
             : base(regionManager)
         {
             PageTitle = "菜单管理";
             _regionManager = regionManager;
             _menuService = menuService;
+            _dialogService = dialogService;
             RefreshCommand = new DelegateCommand(Refresh);
+            ModifyCommand = new DelegateCommand<object>(DoModify);
 
             Refresh();
         }
 
-
+        // 新增和编辑
+        private void DoModify(object obj)
+        {
+            DialogParameters ps = new DialogParameters();
+            ps.Add("model", obj);
+            _dialogService.ShowDialog("ModifyMenuView", ps, result =>
+            {
+                // 返回当前页面 如果OK 刷新 否则不管
+                if (result.Result == ButtonResult.OK)
+                    this.Refresh();
+            });
+        }
 
 
         // 刷新
@@ -47,7 +72,8 @@ namespace XH.SmartParking.ViewModels.Pages
         {
             Menus.Clear();
             // 加载菜单
-            origMenus = _menuService.GetMeunList().ToList();
+            origMenus = _menuService.GetMeunList(SearchKey).ToList();
+
             FillMenus(Menus, 0);
         }
 
@@ -61,6 +87,8 @@ namespace XH.SmartParking.ViewModels.Pages
                 {
                     var menuItem = new MenuItemModel
                     {
+                        MenuId = item.MenuId,
+                        MenuType = item.MenuType,
                         MenuHeader = item.MenuHeader,
                         // 可以转换为十六进制字符表示
                         //MenuIcon = string.IsNullOrEmpty(item.MenuIcon) ? null : ((char)Convert.ToInt32(item.MenuIcon, 16)).ToString(),
@@ -83,29 +111,7 @@ namespace XH.SmartParking.ViewModels.Pages
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        #region 第一版关闭逻辑
 
         //// 执行关闭逻辑
         //private void DoClose()
@@ -118,5 +124,7 @@ namespace XH.SmartParking.ViewModels.Pages
         //        region.Remove(view);
         //    }
         //}
+
+        #endregion
     }
 }

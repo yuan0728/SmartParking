@@ -9,6 +9,6 @@ namespace XH.SmartParking.IService
 {
     public interface IMenuService:IBaseService
     {
-        IEnumerable<SysMenu> GetMeunList();
+        IEnumerable<SysMenu> GetMeunList(string key = "");
     }
 }

@@ -11,6 +11,7 @@ using XH.SmartParking.ORM;
 using XH.SmartParking.Service;
 using XH.SmartParking.Views;
 using XH.SmartParking.Views.Pages;
+using XH.SmartParking.Views.Pages.Dialogs;
 
 namespace XH.SmartParking
 {
@@ -40,6 +41,7 @@ namespace XH.SmartParking
             containerRegistry.RegisterDialogWindow<DialogWindowEX>();
             // 注册弹窗
             containerRegistry.RegisterDialog<LoginView>();
+            containerRegistry.RegisterDialog<ModifyMenuView>();
 
             // 注册相关的服务
             containerRegistry.Register<DbContext, XHDbContext>();

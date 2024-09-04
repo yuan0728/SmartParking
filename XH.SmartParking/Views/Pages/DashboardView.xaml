@@ -61,7 +61,7 @@
                 </UniformGrid>
             </Border>
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Right" Orientation="Horizontal" Margin="10,0">
-                <ComboBox Width="130" Height="30" IsEditable="False" ItemsSource="{Binding AraeList}" SelectedIndex="0" 
+                <ComboBox Width="130" Height="30" IsEditable="False" ItemsSource="{Binding AreaList}" SelectedIndex="0" 
                       SelectedItem="{Binding CurrentArea}" Margin="20,0" DisplayMemberPath="AreaName">
                 </ComboBox>
                 <DatePicker Width="130" Height="30" BorderThickness="0" SelectedDate="{Binding CurrentDate}"/>

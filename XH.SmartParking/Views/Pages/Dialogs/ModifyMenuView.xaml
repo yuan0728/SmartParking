@@ -1,0 +1,83 @@
+﻿<UserControl x:Class="XH.SmartParking.Views.Pages.Dialogs.ModifyMenuView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:XH.SmartParking.Views.Pages.Dialogs"
+             xmlns:c="clr-namespace:XH.SmartParking.Base.Converters"
+             mc:Ignorable="d" Template="{StaticResource DialogViewTemplate}"
+             d:DesignHeight="350" d:DesignWidth="500" Height="350" Width="500">
+    <UserControl.Resources>
+        <c:SectionConverter x:Key="mtConverter"/>
+    </UserControl.Resources>
+    <Grid Margin="40 20" TextBlock.Foreground="#888">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="90"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="菜单名称" VerticalAlignment="Center"/>
+        <TextBlock Text="父节点" Grid.Row="1" VerticalAlignment="Center"/>
+        <TextBlock Text="菜单节点类型" Grid.Row="2" VerticalAlignment="Center"/>
+        <TextBlock Text="目标视图" Grid.Row="3" VerticalAlignment="Center"/>
+        <TextBlock Text="菜单图标" Grid.Row="4" VerticalAlignment="Center"/>
+
+
+        <TextBox Grid.Column="1" Height="30" 
+                     Style="{StaticResource NormalTextBoxStyle}"
+                     Text="{Binding MenuModel.MenuHeader}"/>
+
+        <ComboBox Grid.Column="1" Grid.Row="1" Height="30"
+                      ItemsSource="{Binding ParentNodes}"
+                      DisplayMemberPath="MenuHeader"
+                      SelectedValuePath="MenuId"
+                      SelectedValue="{Binding MenuModel.ParentId}">
+        </ComboBox>
+
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="2"
+                        VerticalAlignment="Center">
+            <RadioButton Content="集合类型" Foreground="#888"
+                         IsChecked="{Binding MenuModel.MenuType,Converter={StaticResource mtConverter},ConverterParameter=1}"/>
+            <RadioButton Content="视图类型" Margin="20,0" Foreground="#888"
+                         IsChecked="{Binding MenuModel.MenuType,Converter={StaticResource mtConverter},ConverterParameter=0}"/>
+        </StackPanel>
+        <TextBox Grid.Row="3" Grid.Column="1" Height="30" 
+                     Style="{StaticResource NormalTextBoxStyle}"
+                     Text="{Binding MenuModel.TargetView}"/>
+        <ComboBox Grid.Column="1" Grid.Row="4" Grid.RowSpan="2"
+                      Height="65" Width="110"
+                      HorizontalAlignment="Left" 
+                      SelectedIndex="0"
+                      xmlns:f="clr-namespace:XH.SmartParking.Assets.Fonts;assembly=XH.SmartParking.Assets"
+                      ItemsSource="{Binding Path=(f:IconFonts.All)}" 
+                      Template="{StaticResource ComboBoxEditableTemplate}"
+                      SelectedItem="{Binding MenuModel.MenuIcon}">
+            <!--添加这个代码可以影响子项的行高-->
+            <ComboBox.Resources>
+                <Style TargetType="ComboBoxItem"></Style>
+            </ComboBox.Resources>
+            <ComboBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="8"/>
+                </ItemsPanelTemplate>
+            </ComboBox.ItemsPanel>
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <Border Width="50" Height="50">
+                        <TextBlock Text="{Binding}" FontFamily="{StaticResource Icons}"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                                       FontSize="30" Foreground="#888"/>
+                    </Border>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+    </Grid>
+</UserControl>

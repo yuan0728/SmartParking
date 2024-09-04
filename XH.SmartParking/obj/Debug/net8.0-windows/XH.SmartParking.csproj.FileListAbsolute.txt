@@ -103,3 +103,5 @@ D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking\obj\Debug\net8.0-w
 D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking\obj\Debug\net8.0-windows\Views\Pages\MenuManagementView.baml
 D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking\obj\Debug\net8.0-windows\Views\Pages\UserManagementView.g.cs
 D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking\obj\Debug\net8.0-windows\Views\Pages\UserManagementView.baml
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking\obj\Debug\net8.0-windows\Views\Pages\Dialogs\ModifyMenuView.g.cs
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking\obj\Debug\net8.0-windows\Views\Pages\Dialogs\ModifyMenuView.baml

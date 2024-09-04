@@ -5,6 +5,7 @@ using Prism.Regions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,8 @@ namespace XH.SmartParking.ViewModels.Pages
         public ObservableCollection<BoardModel> BoardList { get; set; } = new ObservableCollection<BoardModel>();
         public ObservableCollection<RecordModel> RecordList { get; set; } = new ObservableCollection<RecordModel>();
         public ObservableCollection<PassRecordItemModel> InfoList { get; set; } = new ObservableCollection<PassRecordItemModel>();
+        public string CurrentArea { get; set; }
+
         public SeriesCollection Series { get; set; } = new SeriesCollection();
         public DateTime CurrentDate { get; set; } = DateTime.Now;
         public DashboardViewModel(IRegionManager regionManager) 
@@ -92,6 +95,14 @@ namespace XH.SmartParking.ViewModels.Pages
             InfoList.Add(new PassRecordItemModel() { PassDate = "2021-03-01 10:20:36", Passageway = "A1", TollCollector = "1024", LiftingState = "自动", DisCount = 0, State = "正常" });
             InfoList.Add(new PassRecordItemModel() { PassDate = "2021-03-01 10:20:36", Passageway = "A1", TollCollector = "1024", LiftingState = "自动", DisCount = 0, State = "正常" });
 
+            AreaList.Add(new AreaModel { AreaId = "0", AreaName = "" });
+            AreaList.Add(new AreaModel { AreaId = "1", AreaName = "北京" });
+            AreaList.Add(new AreaModel { AreaId = "2", AreaName = "上海" });
+            AreaList.Add(new AreaModel { AreaId = "3", AreaName = "广州" });
+            AreaList.Add(new AreaModel { AreaId = "4", AreaName = "深圳" });
+            AreaList.Add(new AreaModel { AreaId = "5", AreaName = "成都" });
+            AreaList.Add(new AreaModel { AreaId = "6", AreaName = "杭州" });
+            AreaList.Add(new AreaModel { AreaId = "7", AreaName = "重庆" });
         }
     }
 }
