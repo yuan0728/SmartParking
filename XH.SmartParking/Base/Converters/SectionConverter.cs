@@ -20,8 +20,9 @@ namespace XH.SmartParking.Base.Converters
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            return parameter;
+        { 
+            //return parameter;
+            throw new NotImplementedException();
         }
     }
 }

@@ -42,7 +42,7 @@ namespace XH.SmartParking.ORM
             // 第三种写法
             ValueConverter iconValueConverter = new ValueConverter<string, string>(
                 // 返回整数后的十六进制字符串表示（小写）存入数据库。
-                m2d => string.IsNullOrEmpty(m2d) ? null : (Convert.ToInt32(m2d)).ToString("x"),
+                m2d => string.IsNullOrEmpty(m2d) ? null : ((int)m2d.ToArray()[0]).ToString("x"),
                 // 返回十六进制整数后对应的Unicode字符的字符串表示 显示界面上
                 d2m => string.IsNullOrEmpty(d2m) ? null : ((char)Convert.ToInt32(d2m, 16)).ToString());
             modelBuilder.Entity<SysMenu>()

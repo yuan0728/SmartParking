@@ -18,6 +18,7 @@ namespace XH.SmartParking.Entities
         public string? RealName { get; set; }
 
         public string Password { get; set; }
+        public string? Avatar { get; set; }
 
         public int Status { get; set; }
 

@@ -15,6 +15,20 @@ namespace XH.SmartParking.Service
         {
         }
 
+        public bool CheckUserName(string userName)
+        {
+            return false;
+        }
+
+        public IEnumerable<SysUser> GetUsers(string key)
+        {
+            return Query<SysUser>(u => string.IsNullOrEmpty(key) ? true : 
+                                  u.UserId.ToString().Contains(key) ||
+                                  u.RealName.ToString().Contains(key) ||
+                                  u.Address.ToString().Contains(key) ||
+                                  u.UserName.Contains(key));
+        }
+
         public SysUser Login(string username, string password)
         {
             return this.Query<SysUser>(u => u.UserName == username && u.Password == password).ToList().FirstOrDefault();

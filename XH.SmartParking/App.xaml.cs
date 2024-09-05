@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Prism.Events;
 using Prism.Ioc;
 using Prism.Regions;
 using Prism.Unity;
@@ -44,7 +45,7 @@ namespace XH.SmartParking
             containerRegistry.RegisterDialog<ModifyMenuView>();
 
             // 注册相关的服务
-            containerRegistry.Register<DbContext, XHDbContext>();
+            containerRegistry.RegisterSingleton<DbContext, XHDbContext>();
             containerRegistry.Register<IUserService, UserService>();
             containerRegistry.Register<IMenuService, MenuService>();
 

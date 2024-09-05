@@ -13,14 +13,32 @@ namespace XH.SmartParking.ViewModels.Pages
     {
         public string PageTitle { get; set; } = "页面标题";
         public bool IsCanClose { get; set; } = true;
+
+        private string _searchKey;
+
+        public string SearchKey
+        {
+            get { return _searchKey; }
+            set { SetProperty<string>(ref _searchKey, value); }
+        }
         public DelegateCommand CloseCommand { get; set; }
+        public DelegateCommand RefreshCommand { get; set; }
+        public DelegateCommand<object> DeleteCommand { get; set; }
+        public DelegateCommand<object> ModifyCommand { get; set; }
 
         private readonly IRegionManager _regionManager;
         public ViewModelBase(IRegionManager regionManager)
         {
             _regionManager = regionManager;
             CloseCommand = new DelegateCommand(DoClose);
+            RefreshCommand = new DelegateCommand(Refresh);
+            ModifyCommand = new DelegateCommand<object>(DoModify);
+            DeleteCommand = new DelegateCommand<object>(DoDelete);
         }
+
+        public virtual void Refresh() { }
+        public virtual void DoModify(object obj) { }
+        public virtual void DoDelete(object obj) { }
 
         // 执行关闭逻辑
         private void DoClose()

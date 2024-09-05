@@ -370,7 +370,11 @@
         "frameworks": {
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Users\\yhl18\\Desktop\\WPF学习\\SmartParking\\XH.SmartParking.IService\\XH.SmartParking.IService.csproj": {
+                "projectPath": "D:\\Users\\yhl18\\Desktop\\WPF学习\\SmartParking\\XH.SmartParking.IService\\XH.SmartParking.IService.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

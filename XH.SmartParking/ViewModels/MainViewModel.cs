@@ -1,17 +1,20 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 using Prism.Commands;
+using Prism.Events;
 using Prism.Mvvm;
 using Prism.Regions;
 using Prism.Services.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Drawing;
 using System.Drawing.Imaging;
 using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using XH.SmartParking.Base;
 using XH.SmartParking.Entities;
 using XH.SmartParking.IService;
 using XH.SmartParking.Models;
@@ -36,7 +39,11 @@ namespace XH.SmartParking.ViewModels
         private readonly IDialogService _dialogService;
         private readonly IMenuService _menuService;
         private readonly IRegionManager _regionManager;
-        public MainViewModel(IDialogService dialogService, IMenuService menuService,IRegionManager regionManager)
+        public MainViewModel(
+            IDialogService dialogService, 
+            IMenuService menuService,
+            IRegionManager regionManager,
+            IEventAggregator eventAggregator)
         {
             _dialogService = dialogService;
             _menuService = menuService;
@@ -45,12 +52,27 @@ namespace XH.SmartParking.ViewModels
             OpenLoginWindow();
 
             // 加载菜单
-            origMenus = menuService.GetMeunList().ToList();
-            FillMenus(Menus, 0);
+            LoadMenus();
 
             // 打开窗口
             OpenViewCommand = new DelegateCommand<object>(DoOpenView);
 
+            // 订阅刷新页面：
+            eventAggregator.GetEvent<MenuRefreshMessage>().Subscribe(Receive);
+
+        }
+
+        // 刷新菜单
+        private void Receive()
+        {
+            LoadMenus();
+        }
+
+        public void LoadMenus()
+        {
+            Menus.Clear();
+            origMenus = _menuService.GetMeunList().ToList();
+            FillMenus(Menus, 0);
         }
 
         // 打开窗口

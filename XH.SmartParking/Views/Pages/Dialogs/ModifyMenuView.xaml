@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:XH.SmartParking.Views.Pages.Dialogs"
              xmlns:c="clr-namespace:XH.SmartParking.Base.Converters"
+             xmlns:f="clr-namespace:XH.SmartParking.Assets.Fonts;assembly=XH.SmartParking.Assets"
              mc:Ignorable="d" Template="{StaticResource DialogViewTemplate}"
              d:DesignHeight="350" d:DesignWidth="500" Height="350" Width="500">
     <UserControl.Resources>
@@ -42,12 +43,15 @@
                       SelectedValue="{Binding MenuModel.ParentId}">
         </ComboBox>
 
-        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="2"
-                        VerticalAlignment="Center">
-            <RadioButton Content="集合类型" Foreground="#888"
-                         IsChecked="{Binding MenuModel.MenuType,Converter={StaticResource mtConverter},ConverterParameter=1}"/>
-            <RadioButton Content="视图类型" Margin="20,0" Foreground="#888"
-                         IsChecked="{Binding MenuModel.MenuType,Converter={StaticResource mtConverter},ConverterParameter=0}"/>
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center">
+            <!--<RadioButton Content="集合类型" Foreground="#888" GroupName="group1"
+                         IsChecked="{Binding MenuModel.MenuType,Mode=OneWay,Converter={StaticResource mtConverter},ConverterParameter=1}"/>
+            <RadioButton Content="视图类型" Margin="20,0" Foreground="#888" GroupName="group1"
+                         IsChecked="{Binding MenuModel.MenuType,Mode=OneWay,Converter={StaticResource mtConverter},ConverterParameter=0}"/>-->
+            <RadioButton Content="集合类型" Foreground="#888" GroupName="group1"
+                         IsChecked="{Binding MenuTypeList}"/>
+            <RadioButton Content="视图类型" Margin="20,0" Foreground="#888" GroupName="group1"
+                         IsChecked="{Binding MenuTypeView}"/>
         </StackPanel>
         <TextBox Grid.Row="3" Grid.Column="1" Height="30" 
                      Style="{StaticResource NormalTextBoxStyle}"
@@ -56,13 +60,12 @@
                       Height="65" Width="110"
                       HorizontalAlignment="Left" 
                       SelectedIndex="0"
-                      xmlns:f="clr-namespace:XH.SmartParking.Assets.Fonts;assembly=XH.SmartParking.Assets"
                       ItemsSource="{Binding Path=(f:IconFonts.All)}" 
                       Template="{StaticResource ComboBoxEditableTemplate}"
                       SelectedItem="{Binding MenuModel.MenuIcon}">
             <!--添加这个代码可以影响子项的行高-->
             <ComboBox.Resources>
-                <Style TargetType="ComboBoxItem"></Style>
+                <Style TargetType="ComboBoxItem" />
             </ComboBox.Resources>
             <ComboBox.ItemsPanel>
                 <ItemsPanelTemplate>

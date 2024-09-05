@@ -665,7 +665,8 @@
       },
       "XH.SmartParking.Models/1.0.0": {
         "dependencies": {
-          "Prism.Unity": "8.1.97"
+          "Prism.Unity": "8.1.97",
+          "XH.SmartParking.IService": "1.0.0"
         },
         "runtime": {
           "XH.SmartParking.Models.dll": {}

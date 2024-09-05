@@ -16,6 +16,7 @@ namespace XH.SmartParking.Assets.Fonts
         //}
         public static List<string> All { get; set; } = new List<string>
         {
+            "",
             "\ue618",
             "\ue6b8",
             "\ue600",

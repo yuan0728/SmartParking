@@ -10,5 +10,7 @@ namespace XH.SmartParking.IService
     public interface IUserService : IBaseService
     {
         SysUser Login(string username, string password);
+        bool CheckUserName(string userName);
+        IEnumerable<SysUser> GetUsers(string key);
     }
 }

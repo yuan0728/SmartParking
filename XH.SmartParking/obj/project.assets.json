@@ -1253,7 +1253,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "Prism.Unity": "8.1.97"
+          "Prism.Unity": "8.1.97",
+          "XH.SmartParking.IService": "1.0.0"
         },
         "compile": {
           "bin/placeholder/XH.SmartParking.Models.dll": {}
