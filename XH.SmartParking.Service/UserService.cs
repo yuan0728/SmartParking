@@ -17,7 +17,7 @@ namespace XH.SmartParking.Service
 
         public bool CheckUserName(string userName)
         {
-            return false;
+            return Query<SysUser>(u=>u.UserName == userName).Count() > 0;
         }
 
         public IEnumerable<SysUser> GetUsers(string key)

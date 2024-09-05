@@ -34,7 +34,7 @@ namespace XH.SmartParking.Models
                 _userName = value;
 
                 _errors.Remove("UserName");
-                Task.Run(async () =>
+                Task.Run(() =>
                 {
                     if (string.IsNullOrEmpty(value))
                     {
@@ -46,10 +46,20 @@ namespace XH.SmartParking.Models
                         _errors.Add("UserName", new List<string> { "用户名已被占用" });
                         ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs("UserName"));
                     }
-
                 });
             }
         }
+
+
+        private string _lockButtonText;
+
+        public string LockButtonText
+        {
+            get { return _lockButtonText; }
+            set { SetProperty<string>(ref _lockButtonText, value); }
+        }
+
+
 
         public string RealName { get; set; }
         private string _userIcon;
@@ -61,11 +71,11 @@ namespace XH.SmartParking.Models
         }
 
         public int? Age { get; set; }
-        private string? _gender;
-        public string? Gender
+        private int? _gender;
+        public int? Gender
         {
             get { return _gender; }
-            set { SetProperty<string?>(ref _gender, value); }
+            set { SetProperty<int?>(ref _gender, value); }
         }
 
         public string Address { get; set; }
@@ -74,12 +84,12 @@ namespace XH.SmartParking.Models
         public string Email { get; set; }
         public string Phone { get; set; }
 
-        private int _status;
+        private int? _status;
 
-        public int Status
+        public int? Status
         {
             get { return _status; }
-            set { SetProperty<int>(ref _status, value); }
+            set { SetProperty<int?>(ref _status, value); }
         }
 
         private bool _isSelected;
@@ -95,6 +105,7 @@ namespace XH.SmartParking.Models
 
 
         Dictionary<string, IList<string>> _errors = new Dictionary<string, IList<string>>();
+        //Dictionary<string, IList<string>> _errors = new Dictionary<string, IList<string>>();
         public bool HasErrors => _errors.Count > 0;
 
         public event EventHandler<DataErrorsChangedEventArgs>? ErrorsChanged;

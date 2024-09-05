@@ -8,9 +8,9 @@
              xmlns:f="clr-namespace:XH.SmartParking.Assets.Fonts;assembly=XH.SmartParking.Assets"
              mc:Ignorable="d" Template="{StaticResource DialogViewTemplate}"
              d:DesignHeight="350" d:DesignWidth="500" Height="350" Width="500">
-    <UserControl.Resources>
+    <!--<UserControl.Resources>
         <c:SectionConverter x:Key="mtConverter"/>
-    </UserControl.Resources>
+    </UserControl.Resources>-->
     <Grid Margin="40 20" TextBlock.Foreground="#888">
         <Grid.RowDefinitions>
             <RowDefinition/>

@@ -86,12 +86,12 @@
                                    VerticalAlignment="Center" Margin="5,0"
                                    Grid.Column="4"/>
                         <!--性别-->
-                        <TextBlock Text="{Binding Gender}" Name="tb_gender" Grid.Column="5" Foreground="#888"
+                        <TextBlock Text="女" Name="tb_gender" Grid.Column="5" Foreground="#888"
                                    VerticalAlignment="Center" HorizontalAlignment="Center" 
                                    FontSize="12"/>
                         <!--权限列表-->
-                        <ItemsControl Grid.Column="6" ItemsSource="{Binding Roles}"
-                                  VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <ItemsControl Grid.Column="6" ItemsSource="{Binding Roles}" 
+                                      VerticalAlignment="Center" HorizontalAlignment="Center">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
                                     <WrapPanel/>
@@ -101,7 +101,7 @@
                                 <DataTemplate>
                                     <Border Background="#77409EFE" Margin="3" CornerRadius="5">
                                         <TextBlock Text="{Binding RoleName}" FontSize="12"
-                                               Margin="5,2" Foreground="White"/>
+                                                   Margin="5,2" Foreground="White"/>
                                     </Border>
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
@@ -146,14 +146,14 @@
                                     </Grid.RowDefinitions>
                                     <Border Height="1" Background="#DDD" Grid.Row="2" Margin="0,3"/>
                                     <Button Content="编辑角色" Style="{StaticResource MoreMenuButtonStyle}"
-                                        Command="{Binding DataContext.SelectRoleCommand,RelativeSource={RelativeSource AncestorType=UserControl}}"
-                                        CommandParameter="{Binding}"/>
+                                            Command="{Binding DataContext.SelectRoleCommand,RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                            CommandParameter="{Binding}"/>
                                     <Button Content="重置密码" Grid.Row="1" Style="{StaticResource MoreMenuButtonStyle}"
-                                        Command="{Binding DataContext.ResetPasswordCommand,RelativeSource={RelativeSource AncestorType=UserControl}}"
-                                        CommandParameter="{Binding}"/>
+                                            Command="{Binding DataContext.ResetPasswordCommand,RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                            CommandParameter="{Binding}"/>
                                     <Button Content="{Binding LockButtonText}" Grid.Row="3" Style="{StaticResource MoreMenuButtonStyle}"
-                                        Command="{Binding DataContext.LockUserCommand,RelativeSource={RelativeSource AncestorType=UserControl}}"
-                                        CommandParameter="{Binding}"/>
+                                            Command="{Binding DataContext.LockUserCommand,RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                            CommandParameter="{Binding}"/>
                                 </Grid>
                             </Border>
                         </Popup>

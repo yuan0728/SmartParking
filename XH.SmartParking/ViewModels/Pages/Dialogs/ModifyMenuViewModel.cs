@@ -17,12 +17,8 @@ using XH.SmartParking.Models;
 
 namespace XH.SmartParking.ViewModels.Pages.Dialogs
 {
-    public class ModifyMenuViewModel : BindableBase, IDialogAware
+    public class ModifyMenuViewModel : DialogViewModelBase
     {
-        public string Title { get; set; }
-        public DelegateCommand SaveCommand { get; set; }
-
-
         private bool _menuTypeList;
 
         public bool MenuTypeList
@@ -44,19 +40,7 @@ namespace XH.SmartParking.ViewModels.Pages.Dialogs
                 SetProperty<bool>(ref _menuTypeView, value);
             }
         }
-
-
-
-        public event Action<IDialogResult> RequestClose;
-
-        public bool CanCloseDialog() => true;
-
-        public void OnDialogClosed()
-        {
-
-        }
-
-        public void OnDialogOpened(IDialogParameters parameters)
+        public override void OnDialogOpened(IDialogParameters parameters)
         {
             var model = parameters.GetValue<object>("model") as MenuItemModel;
             if (model == null)
@@ -104,10 +88,9 @@ namespace XH.SmartParking.ViewModels.Pages.Dialogs
         public ModifyMenuViewModel(IMenuService menuService)
         {
             _menuService = menuService;
-            SaveCommand = new DelegateCommand(DoSave);
         }
 
-        private void DoSave()
+        public override void DoSave()
         {
             try
             {
@@ -137,7 +120,7 @@ namespace XH.SmartParking.ViewModels.Pages.Dialogs
                     entity.MenuIcon = MenuModel.MenuIcon;
                     _menuService.Update(entity);
                 }
-                RequestClose?.Invoke(new DialogResult(ButtonResult.OK));
+                base.DoSave();
             }
             catch (Exception ex)
             {

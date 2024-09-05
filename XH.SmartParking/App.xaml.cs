@@ -8,6 +8,7 @@ using System.Data;
 using System.Windows;
 using XH.SmartParking.Base;
 using XH.SmartParking.IService;
+using XH.SmartParking.Models;
 using XH.SmartParking.ORM;
 using XH.SmartParking.Service;
 using XH.SmartParking.Views;
@@ -43,6 +44,7 @@ namespace XH.SmartParking
             // 注册弹窗
             containerRegistry.RegisterDialog<LoginView>();
             containerRegistry.RegisterDialog<ModifyMenuView>();
+            containerRegistry.RegisterDialog<ModifyUserView>();
 
             // 注册相关的服务
             containerRegistry.RegisterSingleton<DbContext, XHDbContext>();

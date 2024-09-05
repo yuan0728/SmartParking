@@ -22,6 +22,9 @@
     <Compile Update="Views\Pages\Dialogs\ModifymenuView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Pages\Dialogs\ModifyUserView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Pages\MenuManagementView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -43,6 +46,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\Dialogs\ModifyMenuView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\Dialogs\ModifyUserView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\MenuManagementView.xaml">
