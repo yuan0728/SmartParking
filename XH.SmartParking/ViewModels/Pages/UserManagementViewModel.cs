@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using XH.SmartParking.Entities;
 using XH.SmartParking.IService;
 using XH.SmartParking.Models;
@@ -18,14 +19,14 @@ namespace XH.SmartParking.ViewModels.Pages
 {
     public class UserManagementViewModel : ViewModelBase
     {
-        public ObservableCollection<UserModel> Users { get; set; } = new ObservableCollection<UserModel>();
+        public ObservableCollection<UserModelEx> Users { get; set; } = new ObservableCollection<UserModelEx>();
         public DelegateCommand<object> SelectRoleCommand { get; set; }
         public DelegateCommand<object> ResetPasswordCommand { get; set; }
         public DelegateCommand<object> LockUserCommand { get; set; }
         private readonly IRegionManager _regionManager;
         private readonly IUserService _userService;
         private readonly IDialogService _dialogService;
-        public UserManagementViewModel(IRegionManager regionManager, IUserService userService,IDialogService dialogService)
+        public UserManagementViewModel(IRegionManager regionManager, IUserService userService, IDialogService dialogService)
             : base(regionManager)
         {
             PageTitle = "系统用户";
@@ -38,25 +39,27 @@ namespace XH.SmartParking.ViewModels.Pages
             ResetPasswordCommand = new DelegateCommand<object>(DoResetPassword);
             LockUserCommand = new DelegateCommand<object>(DoLockUser);
         }
-
         // 锁定/解开角色
         private void DoLockUser(object obj)
         {
-            var model = obj as UserModel;
+            var entity = _userService.Find<SysUser>((obj as UserModel).UserId);
+            entity.Status = entity.Status == 0 ? 1 : 0;
+            _userService.Update<SysUser>(entity);
+            Refresh();
         }
-
         // 重置密码
         private void DoResetPassword(object obj)
         {
-            var model = obj as UserModel;
+            var entity = _userService.Find<SysUser>((obj as UserModel).UserId);
+            entity.Password = "123456";
+            _userService.Update<SysUser>(entity);
+            Refresh();
         }
-
         // 选择角色
         private void DoSelectRole(object obj)
         {
             var model = obj as UserModel;
         }
-
         public override void Refresh()
         {
             Users.Clear();
@@ -64,7 +67,7 @@ namespace XH.SmartParking.ViewModels.Pages
             int index = 1;
             foreach (var u in users)
             {
-                Users.Add(new UserModel
+                Users.Add(new UserModelEx
                 {
                     Index = index++,
                     UserId = u.UserId,
@@ -84,7 +87,12 @@ namespace XH.SmartParking.ViewModels.Pages
         }
         public override void DoDelete(object obj)
         {
-            
+            if ((MessageBox.Show("是否需要删除此项？", "提示", MessageBoxButton.YesNo)) == MessageBoxResult.Yes)
+            {
+                _userService.Delete<SysUser>((obj as UserModel).UserId);
+                MessageBox.Show("删除成功");
+                Refresh();
+            }
         }
         public override void DoModify(object obj)
         {

@@ -133,6 +133,10 @@ namespace XH.SmartParking.ViewModels
                     {
                         throw new Exception("用户名或者密码错误");
                     }
+                    if (user.Status == 0)
+                    {
+                        throw new Exception("用户已锁定，请联系管理员");
+                    }
                     // 根据选项进行记录 密码
                     if (IsRecord)
                     {
@@ -142,7 +146,9 @@ namespace XH.SmartParking.ViewModels
                     // 关闭登录窗口 进入主窗口
                     Application.Current.Dispatcher.Invoke(() =>
                     {
-                        RequestClose.Invoke(new DialogResult(ButtonResult.OK));
+                        DialogResult result = new DialogResult(ButtonResult.OK);
+                        result.Parameters.Add("user", user);
+                        RequestClose.Invoke(result);
                     });
                 }
                 catch (Exception ex)

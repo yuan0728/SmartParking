@@ -31,6 +31,7 @@ namespace XH.SmartParking.ViewModels.Pages.Dialogs
                 UserInfo.Password = "123456"; // 默认密码
                 UserInfo.UserIcon = "a01.jpg";
                 UserInfo.UserName = "";
+                UserInfo.Age = 0;
             }
             else
             {
@@ -54,7 +55,7 @@ namespace XH.SmartParking.ViewModels.Pages.Dialogs
         public UserModel UserInfo { get; set; } = new UserModel();
 
 
-        private bool _man;
+        private bool _man = true;
 
         public bool Man
         {
@@ -104,18 +105,20 @@ namespace XH.SmartParking.ViewModels.Pages.Dialogs
                         UserIcon = UserInfo.UserIcon,
                         Phone = UserInfo.Phone,
                         Gender = Man ? 1 : 0,
+                        Status = 1,
                     });
                 }
                 else
                 {
                     // 编辑
-                    //var entity = _userService.Find<SysMenu>(MenuModel.MenuId);
-                    //entity.MenuHeader = MenuModel.MenuHeader;
-                    //entity.MenuType = MenuTypeList ? 1 : 0;
-                    //entity.ParentId = MenuModel.ParentId;
-                    //entity.TargetView = MenuModel.TargetView;
-                    //entity.MenuIcon = MenuModel.MenuIcon;
-                    //_userService.Update(entity);
+                    var entity = _userService.Find<SysUser>(UserInfo.UserId);
+                    entity.UserName = UserInfo.UserName;
+                    entity.RealName = UserInfo.RealName;
+                    entity.Gender = Man ? 1 : 0;
+                    entity.Address = UserInfo.Address;
+                    entity.Age = UserInfo.Age;
+                    entity.Phone = UserInfo.Phone;
+                    _userService.Update(entity);
                 }
                 base.DoSave();
             }
@@ -123,8 +126,6 @@ namespace XH.SmartParking.ViewModels.Pages.Dialogs
             {
                 MessageBox.Show(ex.ToString());
             }
-
-
         }
     }
 }

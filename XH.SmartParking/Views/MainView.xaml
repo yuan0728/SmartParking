@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:XH.SmartParking.Views"
         xmlns:p="http://prismlibrary.com/"
         xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        xmlns:c="clr-namespace:XH.SmartParking.Base.Converters"
         Icon="/XH.SmartParking.Assets;component/Images/Icon.ico"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" FontFamily="Microsoft YaHei"
         FontSize="13" Foreground="#333" FontWeight="ExtraLight"
@@ -14,7 +15,9 @@
         <WindowChrome GlassFrameThickness="-1" 
                       NonClientFrameEdges="None"/>
     </WindowChrome.WindowChrome>
-    <Window.Resources> 
+    <Window.Resources>
+        <c:GenderConverter x:Key="gc"/>
+        
         <Style TargetType="ToggleButton" x:Key="UserIconButtonStyle">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
@@ -232,7 +235,7 @@
                         </StackPanel>
                     </Border>
 
-                    <Image Source="/Zhaoxi.SmartParking.Assets;component/Images/camera.png" Grid.Row="3" Width="60" VerticalAlignment="Top" Margin="0,-10,0,0">
+                    <Image Source="/XH.SmartParking.Assets;component/Images/camera.png" Grid.Row="3" Width="60" VerticalAlignment="Top" Margin="0,-10,0,0">
                         <Image.Effect>
                             <DropShadowEffect BlurRadius="5" Color="Gray" ShadowDepth="0" Opacity="0.4"/>
                         </Image.Effect>
@@ -342,7 +345,7 @@
                                         HorizontalAlignment="Center"
                                         Orientation="Horizontal" TextBlock.FontSize="11">
                                 <TextBlock Text="{Binding CurrentUser.Age}" Margin="5,0"/>
-                                <TextBlock Text="{Binding CurrentUser.Gender}" Margin="5,0"/>
+                                <TextBlock Text="{Binding CurrentUser.Gender,Converter={StaticResource gc}}" Margin="5,0"/>
                             </StackPanel>
 
                             <Border Background="#EEE" Height="0.5" Grid.Row="3"/>

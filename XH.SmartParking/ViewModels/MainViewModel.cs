@@ -13,6 +13,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using XH.SmartParking.Base;
 using XH.SmartParking.Entities;
@@ -33,14 +34,17 @@ namespace XH.SmartParking.ViewModels
             set { SetProperty<ObservableCollection<MenuItemModel>>(ref _menus, value); }
         }
 
-        public DelegateCommand<object> OpenViewCommand { get; set; }
-        private List<SysMenu> origMenus;
+        public UserModel CurrentUser { get; set; } = new UserModel();// 当前用户的登录信息
 
+        public DelegateCommand<object> OpenViewCommand { get; set; }
+        public DelegateCommand ModifyPasswordCommand { get; set; }
+        public DelegateCommand SwitchCommand { get; set; }
+        private List<SysMenu> origMenus;
         private readonly IDialogService _dialogService;
         private readonly IMenuService _menuService;
         private readonly IRegionManager _regionManager;
         public MainViewModel(
-            IDialogService dialogService, 
+            IDialogService dialogService,
             IMenuService menuService,
             IRegionManager regionManager,
             IEventAggregator eventAggregator)
@@ -56,14 +60,37 @@ namespace XH.SmartParking.ViewModels
 
             // 打开窗口
             OpenViewCommand = new DelegateCommand<object>(DoOpenView);
+            ModifyPasswordCommand = new DelegateCommand(DoModifyPassword);
+            SwitchCommand = new DelegateCommand(DoSwitch);
 
             // 订阅刷新页面：
-            eventAggregator.GetEvent<MenuRefreshMessage>().Subscribe(Receive);
+            eventAggregator.GetEvent<MenuRefreshMessage>().Subscribe(ReceiveLoadMenus);
 
         }
 
+        // 切换用户
+        private void DoSwitch()
+        {
+
+        }
+
+        // 修改密码
+        private void DoModifyPassword()
+        {
+            DialogParameters param = new DialogParameters();
+            param.Add("user", CurrentUser);
+            _dialogService.ShowDialog("ModifyPasswordView", param, result =>
+            {
+                if(result.Result == ButtonResult.OK)
+                {
+                    // 如果修改完成 重新登录
+                    
+                }
+            });
+        }
+
         // 刷新菜单
-        private void Receive()
+        private void ReceiveLoadMenus()
         {
             LoadMenus();
         }
@@ -100,6 +127,18 @@ namespace XH.SmartParking.ViewModels
                     // 如果没有登录成功 直接退出
                     System.Environment.Exit(0);
                 }
+                else
+                {
+                    // 记录当前登录信息
+                    var su = result.Parameters.GetValue<SysUser>("user");
+                    CurrentUser.UserId = su.UserId;
+                    CurrentUser.UserName = su.UserName;
+                    CurrentUser.RealName = su.RealName;
+                    CurrentUser.Password = su.Password;
+                    CurrentUser.Age = su.Age;
+                    CurrentUser.Gender = su.Gender;
+                    CurrentUser.UserIcon = "pack://siteoforigin:,,,/Avatarts/" + su.UserIcon;
+                }
 
             });
         }
@@ -128,6 +167,6 @@ namespace XH.SmartParking.ViewModels
                 }
             }
         }
-        
+
     }
 }

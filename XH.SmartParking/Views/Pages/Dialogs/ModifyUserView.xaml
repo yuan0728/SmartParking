@@ -47,19 +47,19 @@
             <RadioButton Content="女" Margin="10,0"
                         IsChecked="{Binding Man,Mode=OneWay,Converter={StaticResource sConverter},ConverterParameter=0}"/>--> 
             <RadioButton Content="男"
-                        IsChecked="{Binding Man,Mode=OneWay}"/>
+                        IsChecked="{Binding Man,Mode=TwoWay}"/>
             <RadioButton Content="女" Margin="10,0"
-                        IsChecked="{Binding Woman,Mode=OneWay}"/>
+                        IsChecked="{Binding Woman,Mode=TwoWay}"/>
         </StackPanel>
         <TextBox Grid.Column="1" Text="{Binding UserInfo.Address}" Grid.Row="3" 
-             Style="{StaticResource NormalTextBoxStyle}" Grid.ColumnSpan="2"
-              Height="30"/>
+                 Style="{StaticResource NormalTextBoxStyle}" Grid.ColumnSpan="2"
+                 Height="30"/>
         <TextBox Grid.Column="1" Text="{Binding UserInfo.Age}" Grid.Row="4" 
-             Style="{StaticResource NormalTextBoxStyle}" Grid.ColumnSpan="2"
-              Height="30"/>
+                 Style="{StaticResource ValidationTextBoxStyle}" Grid.ColumnSpan="2"
+                 Height="30"/>
         <TextBox Grid.Column="1" Text="{Binding UserInfo.Phone}" Grid.Row="5" 
-             Style="{StaticResource NormalTextBoxStyle}" Grid.ColumnSpan="2"
-              Height="30"/>
+                 Style="{StaticResource NormalTextBoxStyle}" Grid.ColumnSpan="2"
+                 Height="30"/>
 
     </Grid>
 </UserControl>

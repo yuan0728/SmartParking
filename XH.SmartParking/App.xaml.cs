@@ -45,6 +45,7 @@ namespace XH.SmartParking
             containerRegistry.RegisterDialog<LoginView>();
             containerRegistry.RegisterDialog<ModifyMenuView>();
             containerRegistry.RegisterDialog<ModifyUserView>();
+            containerRegistry.RegisterDialog<ModifyPasswordView>();
 
             // 注册相关的服务
             containerRegistry.RegisterSingleton<DbContext, XHDbContext>();

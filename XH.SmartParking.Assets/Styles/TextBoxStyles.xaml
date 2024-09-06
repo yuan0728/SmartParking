@@ -173,6 +173,7 @@
                         </Trigger>
                         <Trigger Property="Validation.HasError" Value="True">
                             <Setter Property="Visibility" Value="Visible" TargetName="tb_error"/>
+                            <Setter Property="BorderBrush" Value="Red" TargetName="border"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

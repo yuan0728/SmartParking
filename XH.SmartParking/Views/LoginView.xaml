@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:XH.SmartParking.Views"
              xmlns:p="http://prismlibrary.com/" 
-             xmlns:c="clr-namespace:Zhaoxi.SmartParking.Controls;assembly=XH.SmartParking.Controls"
+             xmlns:c="clr-namespace:XH.SmartParking.Controls;assembly=XH.SmartParking.Controls"
              Background="Transparent"
              xmlns:b="clr-namespace:XH.SmartParking.Base"
              mc:Ignorable="d" Height="300" Width="480">

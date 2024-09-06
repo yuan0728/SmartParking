@@ -50,17 +50,6 @@ namespace XH.SmartParking.Models
             }
         }
 
-
-        private string _lockButtonText;
-
-        public string LockButtonText
-        {
-            get { return _lockButtonText; }
-            set { SetProperty<string>(ref _lockButtonText, value); }
-        }
-
-
-
         public string RealName { get; set; }
         private string _userIcon;
 
@@ -70,7 +59,23 @@ namespace XH.SmartParking.Models
             set { SetProperty<string>(ref _userIcon, value); }
         }
 
-        public int? Age { get; set; }
+        private int? _age;
+
+        public int? Age
+        {
+            get { return _age; }
+            set
+            {
+                _age = value;
+                _errors.Remove("Age");
+                if (value > 200 || value < 0)
+                {
+                    _errors.Add("Age", new List<string> { "用户年龄必须在0-200之间" });
+                    ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs("Age"));
+                }
+            }
+        }
+
         private int? _gender;
         public int? Gender
         {

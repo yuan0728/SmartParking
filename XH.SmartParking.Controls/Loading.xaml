@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Zhaoxi.SmartParking.Controls.Loading"
+﻿<UserControl x:Class="XH.SmartParking.Controls.Loading"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 

@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace XH.SmartParking.Entities
 {
@@ -19,7 +20,7 @@ namespace XH.SmartParking.Entities
 
         public string? Password { get; set; }
         public string? Avatar { get; set; }
-
+        
         public int? Status { get; set; }
 
         public int? Age { get; set; }

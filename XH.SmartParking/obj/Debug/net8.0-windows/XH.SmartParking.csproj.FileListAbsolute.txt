@@ -107,3 +107,5 @@ D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking\obj\Debug\net8.0-w
 D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking\obj\Debug\net8.0-windows\Views\Pages\Dialogs\ModifyMenuView.baml
 D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking\obj\Debug\net8.0-windows\Views\Pages\Dialogs\ModifyUserView.g.cs
 D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking\obj\Debug\net8.0-windows\Views\Pages\Dialogs\ModifyUserView.baml
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking\obj\Debug\net8.0-windows\Views\Pages\Dialogs\ModifyPasswordView.g.cs
+D:\Users\yhl18\Desktop\WPF学习\SmartParking\XH.SmartParking\obj\Debug\net8.0-windows\Views\Pages\Dialogs\ModifyPasswordView.baml
