@@ -61,7 +61,7 @@
                     <ControlTemplate TargetType="Button">
                         <Grid>
                             <Border Width="30" Height="30" CornerRadius="5"
-                                Background="White" Name="border" Visibility="Collapsed">
+                                    Background="White" Name="border" Visibility="Collapsed">
                                 <Border.Effect>
                                     <DropShadowEffect BlurRadius="5" ShadowDepth="0"
                                           Color="Black" Opacity="0.3"/>
@@ -376,31 +376,31 @@
 
                         <UniformGrid Columns="4" Margin="5">
                             <Button Style="{StaticResource AvatarItemButtonStyle}"
-                                    Content="pack://siteoforigin:,,,/Avatars/a01.jpg"
+                                    Content="pack://siteoforigin:,,,/Avatarts/a01.jpg"
                                     CommandParameter="a01.jpg" 
                                     Command="{Binding SetAvatarCommand}"/>
                             <Button Style="{StaticResource AvatarItemButtonStyle}"
-                                    Content="pack://siteoforigin:,,,/Avatars/a02.jpg"
+                                    Content="pack://siteoforigin:,,,/Avatarts/a02.jpg"
                                     Command="{Binding SetAvatarCommand}"
                                     CommandParameter="a02.jpg"/>
                             <Button Style="{StaticResource AvatarItemButtonStyle}"
-                                    Content="pack://siteoforigin:,,,/Avatars/a03.png"
+                                    Content="pack://siteoforigin:,,,/Avatarts/a03.png"
                                     Command="{Binding SetAvatarCommand}"
                                     CommandParameter="a03.png"/>
                             <Button Style="{StaticResource AvatarItemButtonStyle}"
-                                    Content="pack://siteoforigin:,,,/Avatars/a04.jpg"
+                                    Content="pack://siteoforigin:,,,/Avatarts/a04.jpg"
                                     Command="{Binding SetAvatarCommand}"
                                     CommandParameter="a04.jpg"/>
                             <Button Style="{StaticResource AvatarItemButtonStyle}"
-                                    Content="pack://siteoforigin:,,,/Avatars/a05.png"
+                                    Content="pack://siteoforigin:,,,/Avatarts/a05.png"
                                     Command="{Binding SetAvatarCommand}"
                                     CommandParameter="a05.png"/>
                             <Button Style="{StaticResource AvatarItemButtonStyle}"
-                                    Content="pack://siteoforigin:,,,/Avatars/a06.jpg"
+                                    Content="pack://siteoforigin:,,,/Avatarts/a06.jpg"
                                     Command="{Binding SetAvatarCommand}"
                                     CommandParameter="a06.jpg"/>
                             <Button Style="{StaticResource AvatarItemButtonStyle}"
-                                    Content="pack://siteoforigin:,,,/Avatars/a07.jpg"
+                                    Content="pack://siteoforigin:,,,/Avatarts/a07.jpg"
                                     Command="{Binding SetAvatarCommand}"
                                     CommandParameter="a07.jpg"/>
                             <Button Style="{StaticResource AvatarItemButtonStyle}"

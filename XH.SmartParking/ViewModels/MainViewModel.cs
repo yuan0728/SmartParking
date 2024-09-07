@@ -1,4 +1,5 @@
 ﻿using Microsoft.IdentityModel.Tokens;
+using Microsoft.Win32;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
@@ -7,9 +8,11 @@ using Prism.Services.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,24 +37,39 @@ namespace XH.SmartParking.ViewModels
             set { SetProperty<ObservableCollection<MenuItemModel>>(ref _menus, value); }
         }
 
+
+        private bool _isDropdownAvatar;
+
+        public bool IsDropdownAvatar
+        {
+            get { return _isDropdownAvatar; }
+            set { SetProperty<bool>(ref _isDropdownAvatar, value); }
+        }
+
+
+
         public UserModel CurrentUser { get; set; } = new UserModel();// 当前用户的登录信息
 
         public DelegateCommand<object> OpenViewCommand { get; set; }
+        public DelegateCommand<object> SetAvatarCommand { get; set; }
         public DelegateCommand ModifyPasswordCommand { get; set; }
         public DelegateCommand SwitchCommand { get; set; }
         private List<SysMenu> origMenus;
         private readonly IDialogService _dialogService;
         private readonly IMenuService _menuService;
         private readonly IRegionManager _regionManager;
+        private readonly IUserService _userService;
         public MainViewModel(
             IDialogService dialogService,
             IMenuService menuService,
             IRegionManager regionManager,
+            IUserService userService,
             IEventAggregator eventAggregator)
         {
             _dialogService = dialogService;
             _menuService = menuService;
             _regionManager = regionManager;
+            _userService = userService;
             // 打开登录窗口
             OpenLoginWindow();
 
@@ -60,6 +78,7 @@ namespace XH.SmartParking.ViewModels
 
             // 打开窗口
             OpenViewCommand = new DelegateCommand<object>(DoOpenView);
+            SetAvatarCommand = new DelegateCommand<object>(DoSetAvatar);
             ModifyPasswordCommand = new DelegateCommand(DoModifyPassword);
             SwitchCommand = new DelegateCommand(DoSwitch);
 
@@ -68,10 +87,48 @@ namespace XH.SmartParking.ViewModels
 
         }
 
+        // 设置头像
+        private void DoSetAvatar(object obj)
+        {
+            try
+            {
+                string avatar = (string)obj;
+                if (string.IsNullOrEmpty(avatar))
+                {
+                    // 打开选择文件窗口
+                    OpenFileDialog openFileDialog = new OpenFileDialog();
+                    openFileDialog.Filter = "图片格式|*.jpg;*.png;*.jpeg";
+                    openFileDialog.CheckFileExists = true;
+                    if (openFileDialog.ShowDialog() == true)
+                    {
+                        avatar = openFileDialog.SafeFileName; // 文件名称 不是路径
+                        // 复制到当前目录下
+                        string target_path = Path.Combine(Environment.CurrentDirectory, "Avatarts", avatar);
+                        if (!File.Exists(target_path))
+                        {
+                            File.Copy(openFileDialog.FileName, target_path);
+                        }
+                    }
+                    else { return; }
+                }
+                // 保存
+                var user = _userService.Find<SysUser>(CurrentUser.UserId);
+                user.UserIcon = avatar;
+                _userService.Update(user);
+                CurrentUser.UserIcon = "pack://siteoforigin:,,,/Avatarts/" + avatar;
+                IsDropdownAvatar = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         // 切换用户
         private void DoSwitch()
         {
-
+            Process.Start("XH.SmartParking.exe");
+            Environment.Exit(0);
         }
 
         // 修改密码
@@ -81,10 +138,14 @@ namespace XH.SmartParking.ViewModels
             param.Add("user", CurrentUser);
             _dialogService.ShowDialog("ModifyPasswordView", param, result =>
             {
-                if(result.Result == ButtonResult.OK)
+                if (result.Result == ButtonResult.OK)
                 {
                     // 如果修改完成 重新登录
-                    
+                    // 提示下 是否现在重启
+                    if (MessageBox.Show("是否立即重启？", "提示", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                    {
+                        DoSwitch();
+                    }
                 }
             });
         }

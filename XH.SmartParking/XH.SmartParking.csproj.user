@@ -31,6 +31,9 @@
     <Compile Update="Views\Pages\MenuManagementView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Pages\RoleView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Pages\UserManagementView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -58,6 +61,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\MenuManagementView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\RoleView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\UserManagementView.xaml">

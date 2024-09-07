@@ -51,11 +51,13 @@ namespace XH.SmartParking
             containerRegistry.RegisterSingleton<DbContext, XHDbContext>();
             containerRegistry.Register<IUserService, UserService>();
             containerRegistry.Register<IMenuService, MenuService>();
+            containerRegistry.Register<IRoleService, RoleService>();
 
             // 注册导航
             containerRegistry.RegisterForNavigation<DashboardView>();
             containerRegistry.RegisterForNavigation<MenuManagementView>();
             containerRegistry.RegisterForNavigation<UserManagementView>();
+            containerRegistry.RegisterForNavigation<RoleView>();
         }
     }
 }
